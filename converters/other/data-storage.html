@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Storage Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all data storage units instantly. Bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and all IEC binary prefixes (kibibytes, mebibytes, gibibytes and more).">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/other/">Other Converters</a></li>
+          <li><span>Data Storage Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Data Storage Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all common data storage units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: -</p>
+
+      <div class="si-iec-info">
+        <strong>Decimal (SI) vs Binary (IEC):</strong>
+        Storage manufacturers use <strong>SI decimal prefixes</strong>: 1 KB = 1,000 bytes, 1 MB = 1,000,000 bytes (powers of 10).
+        Operating systems use <strong>IEC binary prefixes</strong>: 1 KiB = 1,024 bytes, 1 MiB = 1,048,576 bytes (powers of 2).
+        This is why a 500 GB hard drive shows as ~465 GiB in Windows or macOS.
+        The dropdowns below group units by standard.
+      </div>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertData()">
+            <select id="fromUnit" onchange="convertData()">
+              <optgroup label="Base Units">
+                <option value="bits">Bits (b)</option>
+                <option value="nibbles">Nibbles (nibble)</option>
+                <option value="bytes" selected>Bytes (B)</option>
+              </optgroup>
+              <optgroup label="SI Decimal - powers of 10">
+                <option value="kilobits">Kilobits (kbit)</option>
+                <option value="kilobytes">Kilobytes (KB)</option>
+                <option value="megabits">Megabits (Mbit)</option>
+                <option value="megabytes">Megabytes (MB)</option>
+                <option value="gigabits">Gigabits (Gbit)</option>
+                <option value="gigabytes">Gigabytes (GB)</option>
+                <option value="terabits">Terabits (Tbit)</option>
+                <option value="terabytes">Terabytes (TB)</option>
+                <option value="petabits">Petabits (Pbit)</option>
+                <option value="petabytes">Petabytes (PB)</option>
+                <option value="exabits">Exabits (Ebit)</option>
+                <option value="exabytes">Exabytes (EB)</option>
+                <option value="zettabits">Zettabits (Zbit)</option>
+                <option value="zettabytes">Zettabytes (ZB)</option>
+                <option value="yottabits">Yottabits (Ybit)</option>
+                <option value="yottabytes">Yottabytes (YB)</option>
+              </optgroup>
+              <optgroup label="IEC Binary - powers of 2">
+                <option value="kibibits">Kibibits (Kibit)</option>
+                <option value="kibibytes">Kibibytes (KiB)</option>
+                <option value="mebibits">Mebibits (Mibit)</option>
+                <option value="mebibytes">Mebibytes (MiB)</option>
+                <option value="gibibits">Gibibits (Gibit)</option>
+                <option value="gibibytes">Gibibytes (GiB)</option>
+                <option value="tebibits">Tebibits (Tibit)</option>
+                <option value="tebibytes">Tebibytes (TiB)</option>
+                <option value="pebibits">Pebibits (Pibit)</option>
+                <option value="pebibytes">Pebibytes (PiB)</option>
+                <option value="exbibits">Exbibits (Eibit)</option>
+                <option value="exbibytes">Exbibytes (EiB)</option>
+                <option value="zebibits">Zebibits (Zibit)</option>
+                <option value="zebibytes">Zebibytes (ZiB)</option>
+                <option value="yobibits">Yobibits (Yibit)</option>
+                <option value="yobibytes">Yobibytes (YiB)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertData()">
+              <optgroup label="Base Units">
+                <option value="bits">Bits (b)</option>
+                <option value="nibbles">Nibbles (nibble)</option>
+                <option value="bytes">Bytes (B)</option>
+              </optgroup>
+              <optgroup label="SI Decimal - powers of 10">
+                <option value="kilobits">Kilobits (kbit)</option>
+                <option value="kilobytes" selected>Kilobytes (KB)</option>
+                <option value="megabits">Megabits (Mbit)</option>
+                <option value="megabytes">Megabytes (MB)</option>
+                <option value="gigabits">Gigabits (Gbit)</option>
+                <option value="gigabytes">Gigabytes (GB)</option>
+                <option value="terabits">Terabits (Tbit)</option>
+                <option value="terabytes">Terabytes (TB)</option>
+                <option value="petabits">Petabits (Pbit)</option>
+                <option value="petabytes">Petabytes (PB)</option>
+                <option value="exabits">Exabits (Ebit)</option>
+                <option value="exabytes">Exabytes (EB)</option>
+                <option value="zettabits">Zettabits (Zbit)</option>
+                <option value="zettabytes">Zettabytes (ZB)</option>
+                <option value="yottabits">Yottabits (Ybit)</option>
+                <option value="yottabytes">Yottabytes (YB)</option>
+              </optgroup>
+              <optgroup label="IEC Binary - powers of 2">
+                <option value="kibibits">Kibibits (Kibit)</option>
+                <option value="kibibytes">Kibibytes (KiB)</option>
+                <option value="mebibits">Mebibits (Mibit)</option>
+                <option value="mebibytes">Mebibytes (MiB)</option>
+                <option value="gibibits">Gibibits (Gibit)</option>
+                <option value="gibibytes">Gibibytes (GiB)</option>
+                <option value="tebibits">Tebibits (Tibit)</option>
+                <option value="tebibytes">Tebibytes (TiB)</option>
+                <option value="pebibits">Pebibits (Pibit)</option>
+                <option value="pebibytes">Pebibytes (PiB)</option>
+                <option value="exbibits">Exbibits (Eibit)</option>
+                <option value="exbibytes">Exbibytes (EiB)</option>
+                <option value="zebibits">Zebibits (Zibit)</option>
+                <option value="zebibytes">Zebibytes (ZiB)</option>
+                <option value="yobibits">Yobibits (Yibit)</option>
+                <option value="yobibytes">Yobibytes (YiB)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Data Storage Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Data Storage Conversions</h2>
+      <ul>
+        <li>1 byte = 8 bits = 2 nibbles</li>
+        <li>1 KB = 1,000 bytes &nbsp;|&nbsp; 1 KiB = 1,024 bytes</li>
+        <li>1 MB = 1,000,000 bytes &nbsp;|&nbsp; 1 MiB = 1,048,576 bytes</li>
+        <li>1 GB = 1,000,000,000 bytes &nbsp;|&nbsp; 1 GiB = 1,073,741,824 bytes</li>
+        <li>1 TB = 10<sup>12</sup> bytes &nbsp;|&nbsp; 1 TiB = 2<sup>40</sup> bytes (about 9.09% larger)</li>
+        <li>1 PB = 10<sup>15</sup> bytes &nbsp;|&nbsp; 1 PiB = 2<sup>50</sup> bytes</li>
+        <li>1 kbit/s = 1,000 bit/s (internet speeds use SI decimal kilobits)</li>
+        <li>1 Mbit/s = 125 KB/s (divide Mbit/s by 8 to get megabytes/s)</li>
+        <li>SI prefixes (KB, MB, GB ...) use powers of 10 - used by storage manufacturers</li>
+        <li>IEC prefixes (KiB, MiB, GiB ...) use powers of 2 - used by operating systems and RAM</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/other/data-storage-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Bits',s:'bits'},
+      {n:'Nibbles',s:'nibbles'},
+      {n:'Bytes',s:'bytes'},
+      {n:'Kilobits',s:'kilobits'},
+      {n:'Kibibits',s:'kibibits'},
+      {n:'Kilobytes',s:'kilobytes'},
+      {n:'Kibibytes',s:'kibibytes'},
+      {n:'Megabits',s:'megabits'},
+      {n:'Mebibits',s:'mebibits'},
+      {n:'Megabytes',s:'megabytes'},
+      {n:'Mebibytes',s:'mebibytes'},
+      {n:'Gigabits',s:'gigabits'},
+      {n:'Gibibits',s:'gibibits'},
+      {n:'Gigabytes',s:'gigabytes'},
+      {n:'Gibibytes',s:'gibibytes'},
+      {n:'Terabits',s:'terabits'},
+      {n:'Tebibits',s:'tebibits'},
+      {n:'Terabytes',s:'terabytes'},
+      {n:'Tebibytes',s:'tebibytes'},
+      {n:'Petabits',s:'petabits'},
+      {n:'Pebibits',s:'pebibits'},
+      {n:'Petabytes',s:'petabytes'},
+      {n:'Pebibytes',s:'pebibytes'},
+      {n:'Exabits',s:'exabits'},
+      {n:'Exbibits',s:'exbibits'},
+      {n:'Exabytes',s:'exabytes'},
+      {n:'Exbibytes',s:'exbibytes'},
+      {n:'Zettabits',s:'zettabits'},
+      {n:'Zebibits',s:'zebibits'},
+      {n:'Zettabytes',s:'zettabytes'},
+      {n:'Zebibytes',s:'zebibytes'},
+      {n:'Yottabits',s:'yottabits'},
+      {n:'Yobibits',s:'yobibits'},
+      {n:'Yottabytes',s:'yottabytes'},
+      {n:'Yobibytes',s:'yobibytes'}
+    ];
+    var cat = 'other/data-storage';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  }());
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+</body>
+
+</html>

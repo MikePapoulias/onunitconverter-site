@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Convert Rømer to Rankine (°Rø to °R) | UnitConverter</title>
+  <meta name="description" content="Free online Rømer to Rankine converter. 1 Rømer = 469.4 Rankine. Instant and accurate.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://onunitconverter.com/basic/temperature/roemer-to-rankine/">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><a href="/converters/basic/temperature.html">Temperature Converter</a></li>
+          <li><span>Rømer to Rankine</span></li>
+        </ol>
+      </nav>
+
+      <h1>Convert Rømer to Rankine</h1>
+
+      <p>
+        Convert <strong>Rømer (°Rø)</strong>
+        to <strong>Rankine (°R)</strong> instantly and accurately.
+      </p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box">
+        <div class="converter-grid">
+
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" value="1" step="any" oninput="convertTemperature()">
+            <span class="unit-badge">Rømer (°Rø)</span>
+            <select id="fromUnit" hidden>
+              <option value="roemer" selected>Rømer (°Rø)</option>
+            </select>
+          </div>
+
+          <div class="converter-row">
+            <label>To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <span class="unit-badge">Rankine (°R)</span>
+            <select id="toUnit" hidden>
+              <option value="rankine" selected>Rankine (°R)</option>
+            </select>
+          </div>
+
+          <a href="/basic/temperature/rankine-to-roemer/" class="swap-btn swap-btn-main" title="Swap: convert Rankine to Rømer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></a>
+
+        </div>
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <pre class="formula">°R = (°Rø − 7.5) × 24/7 + 491.67</pre>
+
+      <h2>About Rømer</h2>
+      <p>Rømer (°Rø) was designed by Danish astronomer Ole Christensen Rømer in 1701, making it one of the earliest calibrated temperature scales using two fixed points. It sets water's freezing point at 7.5°Rø and boiling point at 60°Rø; the offset of 7.5 at freezing was chosen to avoid negative numbers during the coldest Danish winters. In 1708, Daniel Gabriel Fahrenheit visited Rømer and was directly inspired by his thermometer design to create the Fahrenheit scale. Body temperature on the Rømer scale is approximately 22.5°Rø. Though now obsolete, Rømer's scale holds an important place in thermometric history.</p>
+
+      <h2>About Rankine</h2>
+      <p>Rankine (°R) is an absolute temperature scale named after Scottish engineer William John Macquorn Rankine. Like Kelvin, it starts at absolute zero (0°R = -459.67°F = 0 K), but uses Fahrenheit-sized degree intervals instead of Celsius-sized ones. It's primarily used in engineering applications in the United States, particularly in thermodynamics and steam power calculations. For reference: water freezes at 491.67°R, room temperature is about 530°R, and water boils at 671.67°R. The relationship is simple: °R = °F + 459.67.</p>
+
+      <h2>Quick Reference Table</h2>
+      <table class="ref-table">
+          <thead><tr><th>Rømer (°Rø)</th><th>Rankine (°R)</th></tr></thead>
+          <tbody>
+          <tr><td>7.5 °Rø</td><td>491.67 °R</td></tr>
+          <tr><td>15 °Rø</td><td>517.384 °R</td></tr>
+          <tr><td>22.5 °Rø</td><td>543.099 °R</td></tr>
+          <tr><td>30 °Rø</td><td>568.813 °R</td></tr>
+          <tr><td>60 °Rø</td><td>671.67 °R</td></tr>
+          <tr><td>75 °Rø</td><td>723.099 °R</td></tr>
+          </tbody>
+        </table>
+
+      <p><a href="/converters/basic/temperature.html">&rarr; Full Temperature Converter</a></p>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/temperature-converter.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var inp = document.getElementById('fromValue');
+      var v = new URLSearchParams(location.search).get('v');
+      if (v !== null && v !== '' && isFinite(v)) inp.value = v;
+      var swapBtn = document.querySelector('.swap-btn-main');
+      if (swapBtn) swapBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var val = inp.value;
+        var dest = swapBtn.getAttribute('href');
+        location.href = dest + (val !== '' ? '?v=' + encodeURIComponent(val) : '');
+      });
+      try { convertTemperature(); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>

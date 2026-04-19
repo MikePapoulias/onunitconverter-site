@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Acceleration Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all angular acceleration units instantly. Radians per second squared, rpm/s, degrees per second squared, gradians per second squared, milliradians per second squared and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/engineering/">Engineering Converters</a></li>
+          <li><span>Angular Acceleration Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Angular Acceleration Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all angular acceleration units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: radian per second squared (rad/s&sup2;)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="radians_per_second_squared">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertAngularAcceleration()">
+            <select id="fromUnit" onchange="convertAngularAcceleration()">
+              <optgroup label="Radians">
+                <option value="nanoradians_per_second_squared">Nanoradians per second squared (nrad/s&sup2;)</option>
+                <option value="microradians_per_second_squared">Microradians per second squared (&micro;rad/s&sup2;)</option>
+                <option value="milliradians_per_second_squared">Milliradians per second squared (mrad/s&sup2;)</option>
+                <option value="radians_per_minute_squared">Radians per minute squared (rad/min&sup2;)</option>
+                <option value="radians_per_minute_per_second">Radians per minute per second (rad/min/s)</option>
+                <option value="radians_per_second_squared">Radians per second squared (rad/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Degrees">
+                <option value="degrees_per_hour_per_second">Degrees per hour per second (&deg;/h/s)</option>
+                <option value="degrees_per_minute_squared">Degrees per minute squared (&deg;/min&sup2;)</option>
+                <option value="degrees_per_minute_per_second">Degrees per minute per second (&deg;/min/s)</option>
+                <option value="degrees_per_second_squared">Degrees per second squared (&deg;/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Gradians">
+                <option value="gradians_per_second_squared">Gradians per second squared (gon/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Revolutions">
+                <option value="revolutions_per_minute_squared">Revolutions per minute squared (rev/min&sup2;)</option>
+                <option value="revolutions_per_minute_per_second" selected>Revolutions per minute per second (rpm/s)</option>
+                <option value="revolutions_per_second_squared">Revolutions per second squared (rev/s&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertAngularAcceleration()">
+              <optgroup label="Radians">
+                <option value="nanoradians_per_second_squared">Nanoradians per second squared (nrad/s&sup2;)</option>
+                <option value="microradians_per_second_squared">Microradians per second squared (&micro;rad/s&sup2;)</option>
+                <option value="milliradians_per_second_squared">Milliradians per second squared (mrad/s&sup2;)</option>
+                <option value="radians_per_minute_squared">Radians per minute squared (rad/min&sup2;)</option>
+                <option value="radians_per_minute_per_second">Radians per minute per second (rad/min/s)</option>
+                <option value="radians_per_second_squared" selected>Radians per second squared (rad/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Degrees">
+                <option value="degrees_per_hour_per_second">Degrees per hour per second (&deg;/h/s)</option>
+                <option value="degrees_per_minute_squared">Degrees per minute squared (&deg;/min&sup2;)</option>
+                <option value="degrees_per_minute_per_second">Degrees per minute per second (&deg;/min/s)</option>
+                <option value="degrees_per_second_squared">Degrees per second squared (&deg;/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Gradians">
+                <option value="gradians_per_second_squared">Gradians per second squared (gon/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Revolutions">
+                <option value="revolutions_per_minute_squared">Revolutions per minute squared (rev/min&sup2;)</option>
+                <option value="revolutions_per_minute_per_second">Revolutions per minute per second (rpm/s)</option>
+                <option value="revolutions_per_second_squared">Revolutions per second squared (rev/s&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Angular Acceleration Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Angular Acceleration Conversions</h2>
+      <ul>
+        <li>1 rpm/s = &pi;/30 rad/s&sup2; &asymp; 0.10472 rad/s&sup2; = 6 &deg;/s&sup2; = 1/60 rev/s&sup2;</li>
+        <li>1 rad/s&sup2; = 30/&pi; rpm/s &asymp; 9.5493 rpm/s &asymp; 57.296 &deg;/s&sup2; &asymp; 0.15915 rev/s&sup2;</li>
+        <li>1 rev/s&sup2; = 2&pi; rad/s&sup2; &asymp; 6.2832 rad/s&sup2; = 60 rpm/s = 360 &deg;/s&sup2;</li>
+        <li>1 &deg;/s&sup2; = &pi;/180 rad/s&sup2; &asymp; 0.017453 rad/s&sup2; = 1/6 rpm/s &asymp; 0.16667 rpm/s</li>
+        <li>1 rev/min&sup2; = &pi;/1800 rad/s&sup2; &asymp; 1.745 &times; 10<sup>-3</sup> rad/s&sup2; = 1/60 rpm/s</li>
+        <li>1 rpm/s = 60 rev/min&sup2; &nbsp;|&nbsp; 1 &deg;/h/s = 1 &deg;/min&sup2; = &pi;/648000 &asymp; 4.848 &times; 10<sup>-6</sup> rad/s&sup2;</li>
+        <li>1 gon/s&sup2; = &pi;/200 rad/s&sup2; &asymp; 0.015708 rad/s&sup2; = 0.9 &deg;/s&sup2;</li>
+        <li>1 mrad/s&sup2; = 10<sup>-3</sup> rad/s&sup2; &nbsp;|&nbsp; 1 mrad/s&sup2; &asymp; 0.0573 &deg;/s&sup2; &asymp; 9.549 &times; 10<sup>-3</sup> rpm/s</li>
+        <li>1 rad/min&sup2; = 1/3600 rad/s&sup2; &asymp; 2.778 &times; 10<sup>-4</sup> rad/s&sup2; &asymp; 2.653 &times; 10<sup>-3</sup> rpm/s</li>
+        <li>1 rev/s&sup2; = 1 Hz/s (rotation acceleration) = 400 gon/s&sup2; &asymp; 21600 rev/min&sup2;</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/engineering/angular-acceleration-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Nanoradians per second squared',         s:'nanoradians_per_second_squared'},
+      {n:'Microradians per second squared',        s:'microradians_per_second_squared'},
+      {n:'Degrees per hour per second',            s:'degrees_per_hour_per_second'},
+      {n:'Degrees per minute squared',             s:'degrees_per_minute_squared'},
+      {n:'Radians per minute squared',             s:'radians_per_minute_squared'},
+      {n:'Degrees per minute per second',          s:'degrees_per_minute_per_second'},
+      {n:'Milliradians per second squared',        s:'milliradians_per_second_squared'},
+      {n:'Revolutions per minute squared',         s:'revolutions_per_minute_squared'},
+      {n:'Gradians per second squared',            s:'gradians_per_second_squared'},
+      {n:'Radians per minute per second',          s:'radians_per_minute_per_second'},
+      {n:'Degrees per second squared',             s:'degrees_per_second_squared'},
+      {n:'Revolutions per minute per second',      s:'revolutions_per_minute_per_second'},
+      {n:'Radians per second squared',             s:'radians_per_second_squared'},
+      {n:'Revolutions per second squared',         s:'revolutions_per_second_squared'}
+    ];
+    var cat = 'engineering/angular-acceleration';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

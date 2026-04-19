@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Permeability Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all permeability units instantly. mD, D, &micro;m&sup2;, m&sup2;, nD, &micro;D, kD, nm&sup2; and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/fluids/">Fluids Converters</a></li>
+          <li><span>Permeability Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Permeability Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all permeability units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: square metre (m&sup2;)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="metre_squared">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertPermeability()">
+            <select id="fromUnit" onchange="convertPermeability()">
+              <optgroup label="Darcy-based (oilfield)">
+                <option value="nanodarcy">Nanodarcy (nD)</option>
+                <option value="microdarcy">Microdarcy (&micro;D)</option>
+                <option value="millidarcy" selected>Millidarcy (mD)</option>
+                <option value="darcy">Darcy (D)</option>
+                <option value="kilodarcy">Kilodarcy (kD)</option>
+              </optgroup>
+              <optgroup label="SI squared (metric)">
+                <option value="picometre_squared">Picometre squared (pm&sup2;)</option>
+                <option value="nanometre_squared">Nanometre squared (nm&sup2;)</option>
+                <option value="micrometre_squared">Micrometre squared (&micro;m&sup2;)</option>
+                <option value="millimetre_squared">Millimetre squared (mm&sup2;)</option>
+                <option value="centimetre_squared">Centimetre squared (cm&sup2;)</option>
+                <option value="metre_squared">Metre squared (m&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="inch_squared">Inch squared (in&sup2;)</option>
+                <option value="foot_squared">Foot squared (ft&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertPermeability()">
+              <optgroup label="Darcy-based (oilfield)">
+                <option value="nanodarcy">Nanodarcy (nD)</option>
+                <option value="microdarcy">Microdarcy (&micro;D)</option>
+                <option value="millidarcy">Millidarcy (mD)</option>
+                <option value="darcy" selected>Darcy (D)</option>
+                <option value="kilodarcy">Kilodarcy (kD)</option>
+              </optgroup>
+              <optgroup label="SI squared (metric)">
+                <option value="picometre_squared">Picometre squared (pm&sup2;)</option>
+                <option value="nanometre_squared">Nanometre squared (nm&sup2;)</option>
+                <option value="micrometre_squared">Micrometre squared (&micro;m&sup2;)</option>
+                <option value="millimetre_squared">Millimetre squared (mm&sup2;)</option>
+                <option value="centimetre_squared">Centimetre squared (cm&sup2;)</option>
+                <option value="metre_squared">Metre squared (m&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="inch_squared">Inch squared (in&sup2;)</option>
+                <option value="foot_squared">Foot squared (ft&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Permeability Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Permeability Conversions</h2>
+      <ul>
+        <li>1 D = 1 000 mD = 10<sup>6</sup> &micro;D = 10<sup>9</sup> nD</li>
+        <li>1 D &asymp; 9.869 &times; 10<sup>-13</sup> m&sup2; &asymp; 0.9869 &micro;m&sup2; (less than 1 &micro;m&sup2;)</li>
+        <li>1 &micro;m&sup2; &asymp; 1.0133 D (the SI-consistent near-equivalent of the darcy)</li>
+        <li>1 mD &asymp; 9.869 &times; 10<sup>-16</sup> m&sup2; = 9.869 &times; 10<sup>-4</sup> nm&sup2;</li>
+        <li>Shale gas matrix: 1-1 000 nD; tight sandstone: 0.01-1 mD; good reservoir: 100-1 000 mD</li>
+        <li>1 kD = 1 000 D = 10<sup>6</sup> mD (gravel-pack and vuggy carbonate range)</li>
+        <li>1 &micro;m&sup2; = 10<sup>6</sup> nm&sup2; = 10<sup>12</sup> pm&sup2;</li>
+        <li>1 m&sup2; = 10<sup>12</sup> &micro;m&sup2; &asymp; 1.013 &times; 10<sup>12</sup> D</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/fluids/permeability-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Nanodarcy',           s:'nanodarcy'},
+      {n:'Microdarcy',          s:'microdarcy'},
+      {n:'Millidarcy',          s:'millidarcy'},
+      {n:'Darcy',               s:'darcy'},
+      {n:'Kilodarcy',           s:'kilodarcy'},
+      {n:'Picometre squared',   s:'picometre_squared'},
+      {n:'Nanometre squared',   s:'nanometre_squared'},
+      {n:'Micrometre squared',  s:'micrometre_squared'},
+      {n:'Millimetre squared',  s:'millimetre_squared'},
+      {n:'Centimetre squared',  s:'centimetre_squared'},
+      {n:'Metre squared',       s:'metre_squared'},
+      {n:'Inch squared',        s:'inch_squared'},
+      {n:'Foot squared',        s:'foot_squared'}
+    ];
+    var cat = 'fluids/permeability';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

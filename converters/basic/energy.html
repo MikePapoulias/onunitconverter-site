@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Energy Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all energy units instantly. Joules, kilojoules, calories, kilocalories, BTU, kWh, MWh, electronvolts, ergs and many more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><span>Energy Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Energy Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all common energy units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: joule (J)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="joules">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertEnergy()">
+            <select id="fromUnit" onchange="convertEnergy()">
+              <option value="electronVolts">Electronvolts (eV)</option>
+              <option value="attojoules">Attojoules (aJ)</option>
+              <option value="femtojoules">Femtojoules (fJ)</option>
+              <option value="picojoules">Picojoules (pJ)</option>
+              <option value="nanojoules">Nanojoules (nJ)</option>
+              <option value="ergs">Ergs (erg)</option>
+              <option value="microjoules">Microjoules (µJ)</option>
+              <option value="millijoules">Millijoules (mJ)</option>
+              <option value="inchPoundForce">Inch-Pound-Force (in·lbf)</option>
+              <option value="joules" selected>Joules (J)</option>
+              <option value="footPoundForce">Foot-Pound-Force (ft·lbf)</option>
+              <option value="calories">Calories (cal)</option>
+              <option value="kilojoules">Kilojoules (kJ)</option>
+              <option value="britishThermalUnits">British Thermal Units (BTU)</option>
+              <option value="wattHours">Watt-Hours (Wh)</option>
+              <option value="kilocalories">Kilocalories (kcal)</option>
+              <option value="megajoules">Megajoules (MJ)</option>
+              <option value="horsepowerHours">Horsepower-Hours (hp·h)</option>
+              <option value="kilowattHours">Kilowatt-Hours (kWh)</option>
+              <option value="therms">Therms (thm)</option>
+              <option value="gigajoules">Gigajoules (GJ)</option>
+              <option value="megawattHours">Megawatt-Hours (MWh)</option>
+              <option value="tonsOfTNT">Tons of TNT (t(TNT))</option>
+              <option value="toeOil">Ton of Oil Equivalent (toe)</option>
+              <option value="terajoules">Terajoules (TJ)</option>
+              <option value="gigawattHours">Gigawatt-Hours (GWh)</option>
+              <option value="kilotonsTNT">Kilotons of TNT (kt(TNT))</option>
+              <option value="petajoules">Petajoules (PJ)</option>
+              <option value="megatonsTNT">Megatons of TNT (Mt(TNT))</option>
+              <option value="exajoules">Exajoules (EJ)</option>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertEnergy()">
+              <option value="electronVolts">Electronvolts (eV)</option>
+              <option value="attojoules">Attojoules (aJ)</option>
+              <option value="femtojoules">Femtojoules (fJ)</option>
+              <option value="picojoules">Picojoules (pJ)</option>
+              <option value="nanojoules">Nanojoules (nJ)</option>
+              <option value="ergs">Ergs (erg)</option>
+              <option value="microjoules">Microjoules (µJ)</option>
+              <option value="millijoules">Millijoules (mJ)</option>
+              <option value="inchPoundForce">Inch-Pound-Force (in·lbf)</option>
+              <option value="joules">Joules (J)</option>
+              <option value="footPoundForce">Foot-Pound-Force (ft·lbf)</option>
+              <option value="calories">Calories (cal)</option>
+              <option value="kilojoules" selected>Kilojoules (kJ)</option>
+              <option value="britishThermalUnits">British Thermal Units (BTU)</option>
+              <option value="wattHours">Watt-Hours (Wh)</option>
+              <option value="kilocalories">Kilocalories (kcal)</option>
+              <option value="megajoules">Megajoules (MJ)</option>
+              <option value="horsepowerHours">Horsepower-Hours (hp·h)</option>
+              <option value="kilowattHours">Kilowatt-Hours (kWh)</option>
+              <option value="therms">Therms (thm)</option>
+              <option value="gigajoules">Gigajoules (GJ)</option>
+              <option value="megawattHours">Megawatt-Hours (MWh)</option>
+              <option value="tonsOfTNT">Tons of TNT (t(TNT))</option>
+              <option value="toeOil">Ton of Oil Equivalent (toe)</option>
+              <option value="terajoules">Terajoules (TJ)</option>
+              <option value="gigawattHours">Gigawatt-Hours (GWh)</option>
+              <option value="kilotonsTNT">Kilotons of TNT (kt(TNT))</option>
+              <option value="petajoules">Petajoules (PJ)</option>
+              <option value="megatonsTNT">Megatons of TNT (Mt(TNT))</option>
+              <option value="exajoules">Exajoules (EJ)</option>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Energy Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Energy Conversions</h2>
+      <ul>
+        <li>1 J = 0.23901 cal = 9.4782 &times; 10<sup>-4</sup> BTU = 2.7778 &times; 10<sup>-7</sup> kWh</li>
+        <li>1 cal = 4.184 J = 3.9683 &times; 10<sup>-3</sup> BTU = 1.163 &times; 10<sup>-3</sup> Wh</li>
+        <li>1 kcal = 4,184 J = 4.184 kJ = 1,000 cal = 3.968 BTU = 1.163 Wh</li>
+        <li>1 BTU = 1,055.06 J = 252.16 cal = 0.29307 Wh = 1.0551 &times; 10<sup>-5</sup> thm</li>
+        <li>1 kJ = 1,000 J = 239.0 cal = 0.9478 BTU = 0.27778 Wh</li>
+        <li>1 Wh = 3,600 J = 860.4 cal = 3.412 BTU = 0.001 kWh</li>
+        <li>1 kWh = 3.6 MJ = 3,600 kJ = 3,412.1 BTU = 859.85 kcal</li>
+        <li>1 MJ = 1,000 kJ = 238.85 kcal = 0.27778 kWh = 947.8 BTU</li>
+        <li>1 thm = 100,000 BTU = 105.506 MJ = 29.307 kWh = 25,200 kcal</li>
+        <li>1 ft·lbf = 1.35582 J = 0.32405 cal = 1.2851 &times; 10<sup>-3</sup> BTU</li>
+        <li>1 eV = 1.60218 &times; 10<sup>-19</sup> J = 1.60218 &times; 10<sup>-22</sup> kJ</li>
+        <li>1 erg = 10<sup>-7</sup> J = 100 nJ = 2.3901 &times; 10<sup>-8</sup> cal</li>
+        <li>1 t(TNT) = 4.184 GJ = 1,162.8 kWh = 10<sup>9</sup> cal</li>
+        <li>1 GJ = 277.78 kWh = 238.85 Mcal = 9.4782 therms</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/energy-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Electronvolts',s:'electronvolts'},
+      {n:'Attojoules',s:'attojoules'},
+      {n:'Femtojoules',s:'femtojoules'},
+      {n:'Picojoules',s:'picojoules'},
+      {n:'Nanojoules',s:'nanojoules'},
+      {n:'Ergs',s:'ergs'},
+      {n:'Microjoules',s:'microjoules'},
+      {n:'Millijoules',s:'millijoules'},
+      {n:'Inch-Pound-Force',s:'inch-pound-force'},
+      {n:'Joules',s:'joules'},
+      {n:'Foot-Pound-Force',s:'foot-pound-force'},
+      {n:'Calories',s:'calories'},
+      {n:'Kilojoules',s:'kilojoules'},
+      {n:'British Thermal Units',s:'british-thermal-units'},
+      {n:'Watt-Hours',s:'watt-hours'},
+      {n:'Kilocalories',s:'kilocalories'},
+      {n:'Megajoules',s:'megajoules'},
+      {n:'Horsepower-Hours',s:'horsepower-hours'},
+      {n:'Kilowatt-Hours',s:'kilowatt-hours'},
+      {n:'Therms',s:'therms'},
+      {n:'Gigajoules',s:'gigajoules'},
+      {n:'Megawatt-Hours',s:'megawatt-hours'},
+      {n:'Tons of TNT',s:'tons-of-tnt'},
+      {n:'Ton of Oil Equivalent',s:'ton-of-oil-equivalent'},
+      {n:'Terajoules',s:'terajoules'},
+      {n:'Gigawatt-Hours',s:'gigawatt-hours'},
+      {n:'Kilotons of TNT',s:'kilotons-of-tnt'},
+      {n:'Petajoules',s:'petajoules'},
+      {n:'Megatons of TNT',s:'megatons-of-tnt'},
+      {n:'Exajoules',s:'exajoules'}
+    ];
+    var cat = 'basic/energy';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  }());
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+
+</body>
+
+</html>

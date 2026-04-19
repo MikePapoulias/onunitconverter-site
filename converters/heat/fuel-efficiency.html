@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fuel Efficiency Converter (Mass) | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all mass-based fuel efficiency units instantly. Kilometres per kilogram, miles per pound, nautical miles per pound, km/g, nmi/lb and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/heat/">Heat Converters</a></li>
+          <li><span>Fuel Efficiency Converter (Mass)</span></li>
+        </ol>
+      </nav>
+      <h1>Fuel Efficiency Converter (Mass)</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all mass-based fuel efficiency units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: metre per kilogram (m/kg)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="metres_per_kilogram">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertFuelEfficiency()">
+            <select id="fromUnit" onchange="convertFuelEfficiency()">
+              <optgroup label="Metric">
+                <option value="metres_per_kilogram">Metres per kilogram (m/kg)</option>
+                <option value="kilometres_per_kilogram">Kilometres per kilogram (km/kg)</option>
+                <option value="kilometres_per_gram">Kilometres per gram (km/g)</option>
+              </optgroup>
+              <optgroup label="Imperial / Mixed">
+                <option value="feet_per_pound">Feet per pound (ft/lb)</option>
+                <option value="yards_per_pound">Yards per pound (yd/lb)</option>
+                <option value="metres_per_pound">Metres per pound (m/lb)</option>
+                <option value="miles_per_kilogram">Miles per kilogram (mi/kg)</option>
+                <option value="nautical_miles_per_kilogram">Nautical miles per kilogram (nmi/kg)</option>
+                <option value="kilometres_per_pound">Kilometres per pound (km/lb)</option>
+                <option value="miles_per_pound" selected>Miles per pound (mi/lb)</option>
+                <option value="nautical_miles_per_pound">Nautical miles per pound (nmi/lb)</option>
+                <option value="miles_per_ounce">Miles per ounce (mi/oz)</option>
+                <option value="nautical_miles_per_ounce">Nautical miles per ounce (nmi/oz)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertFuelEfficiency()">
+              <optgroup label="Metric">
+                <option value="metres_per_kilogram">Metres per kilogram (m/kg)</option>
+                <option value="kilometres_per_kilogram" selected>Kilometres per kilogram (km/kg)</option>
+                <option value="kilometres_per_gram">Kilometres per gram (km/g)</option>
+              </optgroup>
+              <optgroup label="Imperial / Mixed">
+                <option value="feet_per_pound">Feet per pound (ft/lb)</option>
+                <option value="yards_per_pound">Yards per pound (yd/lb)</option>
+                <option value="metres_per_pound">Metres per pound (m/lb)</option>
+                <option value="miles_per_kilogram">Miles per kilogram (mi/kg)</option>
+                <option value="nautical_miles_per_kilogram">Nautical miles per kilogram (nmi/kg)</option>
+                <option value="kilometres_per_pound">Kilometres per pound (km/lb)</option>
+                <option value="miles_per_pound">Miles per pound (mi/lb)</option>
+                <option value="nautical_miles_per_pound">Nautical miles per pound (nmi/lb)</option>
+                <option value="miles_per_ounce">Miles per ounce (mi/oz)</option>
+                <option value="nautical_miles_per_ounce">Nautical miles per ounce (nmi/oz)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Fuel Efficiency (Mass) Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Fuel Efficiency (Mass) Conversions</h2>
+      <ul>
+        <li>1 km/kg = 1000 m/kg &asymp; 0.6214 mi/kg &asymp; 0.5400 nmi/kg &asymp; 0.4536 km/lb &asymp; 0.2822 mi/lb</li>
+        <li>1 mi/lb &asymp; 3.548 km/kg = 3548 m/kg &asymp; 2.205 mi/kg &asymp; 1.609 km/lb &asymp; 0.869 nmi/lb</li>
+        <li>1 nmi/lb &asymp; 4.083 km/kg &asymp; 2.205 nmi/kg &asymp; 1.852 km/lb &asymp; 1.150 mi/lb</li>
+        <li>1 km/lb &asymp; 2.205 km/kg &asymp; 1.370 mi/kg &asymp; 0.621 mi/lb &asymp; 0.540 nmi/lb</li>
+        <li>1 nmi/kg = 1.852 km/kg &asymp; 1.151 mi/kg &asymp; 0.8398 km/lb &asymp; 0.4536 nmi/lb</li>
+        <li>1 mi/oz = 16 mi/lb &asymp; 56.78 km/kg &asymp; 35.27 mi/kg &asymp; 13.89 nmi/lb</li>
+        <li>1 nmi/oz = 16 nmi/lb &asymp; 65.33 km/kg &asymp; 35.27 nmi/kg &asymp; 14.40 mi/lb</li>
+        <li>1 km/g = 1000 km/kg &asymp; 621.4 mi/kg &asymp; 281.9 mi/lb &asymp; 245.0 nmi/lb &asymp; 15.29 nmi/oz</li>
+        <li>Toyota Mirai (H<sub>2</sub>): &asymp; 140 km/kg &asymp; 87.0 mi/kg &asymp; 39.5 mi/lb &asymp; 34.3 nmi/lb &asymp; 0.140 km/g</li>
+        <li>LPG car: &asymp; 14 km/kg &asymp; 8.70 mi/kg &asymp; 3.95 mi/lb &asymp; 3.43 nmi/lb</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/heat/fuel-efficiency-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Feet per pound',                   s:'feet_per_pound'},
+      {n:'Metres per kilogram',              s:'metres_per_kilogram'},
+      {n:'Yards per pound',                  s:'yards_per_pound'},
+      {n:'Metres per pound',                 s:'metres_per_pound'},
+      {n:'Kilometres per kilogram',          s:'kilometres_per_kilogram'},
+      {n:'Miles per kilogram',               s:'miles_per_kilogram'},
+      {n:'Nautical miles per kilogram',      s:'nautical_miles_per_kilogram'},
+      {n:'Kilometres per pound',             s:'kilometres_per_pound'},
+      {n:'Miles per pound',                  s:'miles_per_pound'},
+      {n:'Nautical miles per pound',         s:'nautical_miles_per_pound'},
+      {n:'Miles per ounce',                  s:'miles_per_ounce'},
+      {n:'Nautical miles per ounce',         s:'nautical_miles_per_ounce'},
+      {n:'Kilometres per gram',              s:'kilometres_per_gram'}
+    ];
+    var cat = 'heat/fuel-efficiency';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

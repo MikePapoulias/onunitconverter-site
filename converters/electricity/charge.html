@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Charge Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all electric charge units instantly. Coulombs, mAh, Ah, pC, nC, &micro;C, statC, abC, Faraday and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/electricity/">Electricity Converters</a></li>
+          <li><span>Charge Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Charge Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all electric charge units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: coulomb (C)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="coulombs">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertCharge()">
+            <select id="fromUnit" onchange="convertCharge()">
+              <optgroup label="SI units">
+                <option value="attocoulombs">Attocoulombs (aC)</option>
+                <option value="femtocoulombs">Femtocoulombs (fC)</option>
+                <option value="picocoulombs">Picocoulombs (pC)</option>
+                <option value="nanocoulombs">Nanocoulombs (nC)</option>
+                <option value="microcoulombs">Microcoulombs (&micro;C)</option>
+                <option value="millicoulombs">Millicoulombs (mC)</option>
+                <option value="coulombs">Coulombs (C)</option>
+                <option value="kilocoulombs">Kilocoulombs (kC)</option>
+                <option value="megacoulombs">Megacoulombs (MC)</option>
+                <option value="gigacoulombs">Gigacoulombs (GC)</option>
+              </optgroup>
+              <optgroup label="Ampere-hours">
+                <option value="microampere_hours">Microampere-hours (&micro;Ah)</option>
+                <option value="milliampere_hours" selected>Milliampere-hours (mAh)</option>
+                <option value="ampere_hours">Ampere-hours (Ah)</option>
+                <option value="kiloampere_hours">Kiloampere-hours (kAh)</option>
+              </optgroup>
+              <optgroup label="CGS units">
+                <option value="statcoulombs">Statcoulombs (statC)</option>
+                <option value="abcoulombs">Abcoulombs (abC)</option>
+              </optgroup>
+              <optgroup label="Physical constants">
+                <option value="elementary_charge">Elementary charge (e)</option>
+                <option value="faradays">Faradays (F)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertCharge()">
+              <optgroup label="SI units">
+                <option value="attocoulombs">Attocoulombs (aC)</option>
+                <option value="femtocoulombs">Femtocoulombs (fC)</option>
+                <option value="picocoulombs">Picocoulombs (pC)</option>
+                <option value="nanocoulombs">Nanocoulombs (nC)</option>
+                <option value="microcoulombs">Microcoulombs (&micro;C)</option>
+                <option value="millicoulombs">Millicoulombs (mC)</option>
+                <option value="coulombs" selected>Coulombs (C)</option>
+                <option value="kilocoulombs">Kilocoulombs (kC)</option>
+                <option value="megacoulombs">Megacoulombs (MC)</option>
+                <option value="gigacoulombs">Gigacoulombs (GC)</option>
+              </optgroup>
+              <optgroup label="Ampere-hours">
+                <option value="microampere_hours">Microampere-hours (&micro;Ah)</option>
+                <option value="milliampere_hours">Milliampere-hours (mAh)</option>
+                <option value="ampere_hours">Ampere-hours (Ah)</option>
+                <option value="kiloampere_hours">Kiloampere-hours (kAh)</option>
+              </optgroup>
+              <optgroup label="CGS units">
+                <option value="statcoulombs">Statcoulombs (statC)</option>
+                <option value="abcoulombs">Abcoulombs (abC)</option>
+              </optgroup>
+              <optgroup label="Physical constants">
+                <option value="elementary_charge">Elementary charge (e)</option>
+                <option value="faradays">Faradays (F)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Charge Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Charge Conversions</h2>
+      <ul>
+        <li>1 C = 1 A&middot;s (ampere second - SI definition)</li>
+        <li>1 mAh = 3.6 C (milliampere-hour to coulombs)</li>
+        <li>1 Ah = 3 600 C = 1 000 mAh</li>
+        <li>1 kAh = 3 600 000 C = 1 000 Ah</li>
+        <li>1 Faraday &asymp; 96 485.33 C (charge of 1 mol of electrons, N<sub>A</sub> &times; e)</li>
+        <li>1 abC = 10 C (CGS-EMU abcoulomb)</li>
+        <li>1 statC &asymp; 3.336 &times; 10<sup>-10</sup> C (CGS-Gaussian statcoulomb / franklin)</li>
+        <li>1 e = 1.602 176 634 &times; 10<sup>-19</sup> C (elementary charge, exact)</li>
+        <li>1 &micro;Ah = 3.6 mC = 10<sup>-3</sup> mAh</li>
+        <li>1 kC &asymp; 0.2778 Ah (kilocoulomb to ampere-hours)</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/electricity/charge-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Attocoulombs',        s:'attocoulombs'},
+      {n:'Femtocoulombs',       s:'femtocoulombs'},
+      {n:'Picocoulombs',        s:'picocoulombs'},
+      {n:'Nanocoulombs',        s:'nanocoulombs'},
+      {n:'Microcoulombs',       s:'microcoulombs'},
+      {n:'Millicoulombs',       s:'millicoulombs'},
+      {n:'Coulombs',            s:'coulombs'},
+      {n:'Kilocoulombs',        s:'kilocoulombs'},
+      {n:'Megacoulombs',        s:'megacoulombs'},
+      {n:'Gigacoulombs',        s:'gigacoulombs'},
+      {n:'Microampere-hours',   s:'microampere_hours'},
+      {n:'Milliampere-hours',   s:'milliampere_hours'},
+      {n:'Ampere-hours',        s:'ampere_hours'},
+      {n:'Kiloampere-hours',    s:'kiloampere_hours'},
+      {n:'Statcoulombs',        s:'statcoulombs'},
+      {n:'Abcoulombs',          s:'abcoulombs'},
+      {n:'Elementary charge',   s:'elementary_charge'},
+      {n:'Faradays',            s:'faradays'}
+    ];
+    var cat = 'electricity/charge';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Acceleration Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all acceleration units instantly. Metres per second squared, standard gravity (g), Gal, ft/s², km/h/s, mph/s and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+    .dc-links { grid-template-columns: 1fr; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/engineering/">Engineering Converters</a></li>
+          <li><span>Acceleration Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Acceleration Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all acceleration units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: metre per second squared (m/s&sup2;)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="metres_per_second_squared">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertAcceleration()">
+            <select id="fromUnit" onchange="convertAcceleration()">
+              <optgroup label="Metric">
+                <option value="millimetres_per_second_squared">Millimetres per second squared (mm/s&sup2;)</option>
+                <option value="metres_per_second_squared">Metres per second squared (m/s&sup2;)</option>
+                <option value="kilometres_per_second_squared">Kilometres per second squared (km/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="CGS &amp; Geophysical">
+                <option value="microgal">Microgal (&micro;Gal)</option>
+                <option value="milligal">Milligal (mGal)</option>
+                <option value="gal">Gal (Gal)</option>
+                <option value="centimetres_per_second_squared">Centimetres per second squared (cm/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="inches_per_second_squared">Inches per second squared (in/s&sup2;)</option>
+                <option value="feet_per_second_squared">Feet per second squared (ft/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Speed-based">
+                <option value="kilometres_per_hour_per_second">Kilometres per hour per second (km/h/s)</option>
+                <option value="miles_per_hour_per_second">Miles per hour per second (mph/s)</option>
+                <option value="knots_per_second">Knots per second (kn/s)</option>
+              </optgroup>
+              <optgroup label="Gravitational">
+                <option value="standard_gravity" selected>Standard gravity (g&#8320;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertAcceleration()">
+              <optgroup label="Metric">
+                <option value="millimetres_per_second_squared">Millimetres per second squared (mm/s&sup2;)</option>
+                <option value="metres_per_second_squared" selected>Metres per second squared (m/s&sup2;)</option>
+                <option value="kilometres_per_second_squared">Kilometres per second squared (km/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="CGS &amp; Geophysical">
+                <option value="microgal">Microgal (&micro;Gal)</option>
+                <option value="milligal">Milligal (mGal)</option>
+                <option value="gal">Gal (Gal)</option>
+                <option value="centimetres_per_second_squared">Centimetres per second squared (cm/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="inches_per_second_squared">Inches per second squared (in/s&sup2;)</option>
+                <option value="feet_per_second_squared">Feet per second squared (ft/s&sup2;)</option>
+              </optgroup>
+              <optgroup label="Speed-based">
+                <option value="kilometres_per_hour_per_second">Kilometres per hour per second (km/h/s)</option>
+                <option value="miles_per_hour_per_second">Miles per hour per second (mph/s)</option>
+                <option value="knots_per_second">Knots per second (kn/s)</option>
+              </optgroup>
+              <optgroup label="Gravitational">
+                <option value="standard_gravity">Standard gravity (g&#8320;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Acceleration Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Acceleration Conversions</h2>
+      <ul>
+        <li>1 g&#8320; = 9.80665 m/s&sup2; (exact) = 980.665 Gal = 9806.65 mm/s&sup2;</li>
+        <li>1 g&#8320; &asymp; 35.304 km/h/s &asymp; 32.174 ft/s&sup2; &asymp; 21.937 mph/s &asymp; 19.058 kn/s</li>
+        <li>1 m/s&sup2; = 100 Gal = 100 cm/s&sup2; = 1000 mm/s&sup2; &asymp; 0.10197 g&#8320; &asymp; 3.281 ft/s&sup2; = 3.6 km/h/s</li>
+        <li>1 Gal = 0.01 m/s&sup2; = 1 cm/s&sup2; = 10 mGal = 10&thinsp;000 &micro;Gal &asymp; 1.020 &times; 10<sup>-3</sup> g&#8320;</li>
+        <li>1 ft/s&sup2; = 0.3048 m/s&sup2; = 30.48 Gal &asymp; 3.108 &times; 10<sup>-2</sup> g&#8320; &asymp; 1.097 km/h/s</li>
+        <li>1 mph/s = 0.44704 m/s&sup2; (exact) &asymp; 4.561 &times; 10<sup>-2</sup> g&#8320; &asymp; 1.467 ft/s&sup2; = 1.609 km/h/s</li>
+        <li>1 km/h/s = 1/3.6 m/s&sup2; &asymp; 0.27778 m/s&sup2; &asymp; 2.832 &times; 10<sup>-2</sup> g&#8320; &asymp; 0.9113 ft/s&sup2;</li>
+        <li>1 kn/s = 1852/3600 m/s&sup2; &asymp; 0.51444 m/s&sup2; &asymp; 5.247 &times; 10<sup>-2</sup> g&#8320; &asymp; 1.688 ft/s&sup2; = 1.852 km/h/s</li>
+        <li>1 mGal = 10 &micro;Gal = 10<sup>-5</sup> m/s&sup2; &asymp; 1.020 &times; 10<sup>-6</sup> g&#8320;</li>
+        <li>Earth's surface gravity: 9.780 m/s&sup2; (equator) to 9.832 m/s&sup2; (poles) &asymp; 978.0-983.2 Gal</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/engineering/acceleration-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Microgal',                              s:'microgal'},
+      {n:'Milligal',                              s:'milligal'},
+      {n:'Millimetres per second squared',        s:'millimetres_per_second_squared'},
+      {n:'Gal',                                   s:'gal'},
+      {n:'Centimetres per second squared',        s:'centimetres_per_second_squared'},
+      {n:'Inches per second squared',             s:'inches_per_second_squared'},
+      {n:'Kilometres per hour per second',        s:'kilometres_per_hour_per_second'},
+      {n:'Feet per second squared',               s:'feet_per_second_squared'},
+      {n:'Miles per hour per second',             s:'miles_per_hour_per_second'},
+      {n:'Knots per second',                      s:'knots_per_second'},
+      {n:'Metres per second squared',             s:'metres_per_second_squared'},
+      {n:'Standard gravity',                      s:'standard_gravity'},
+      {n:'Kilometres per second squared',         s:'kilometres_per_second_squared'}
+    ];
+    var cat = 'engineering/acceleration';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

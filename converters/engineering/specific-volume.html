@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Specific Volume Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all specific volume units instantly. Cubic metres per kilogram, cubic feet per pound, litres per kilogram, cubic centimetres per gram and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/engineering/">Engineering Converters</a></li>
+          <li><span>Specific Volume Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Specific Volume Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all specific volume units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: cubic metre per kilogram (m&sup3;/kg)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="cubic_metres_per_kilogram">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertSpecificVolume()">
+            <select id="fromUnit" onchange="convertSpecificVolume()">
+              <optgroup label="Metric">
+                <option value="cubic_centimetres_per_gram">Cubic centimetres per gram (cm&sup3;/g)</option>
+                <option value="millilitres_per_gram">Millilitres per gram (mL/g)</option>
+                <option value="litres_per_kilogram">Litres per kilogram (L/kg)</option>
+                <option value="cubic_metres_per_tonne">Cubic metres per tonne (m&sup3;/t)</option>
+                <option value="cubic_metres_per_kilogram" selected>Cubic metres per kilogram (m&sup3;/kg)</option>
+                <option value="cubic_metres_per_gram">Cubic metres per gram (m&sup3;/g)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="cubic_inches_per_pound">Cubic inches per pound (in&sup3;/lb)</option>
+                <option value="cubic_feet_per_slug">Cubic feet per slug (ft&sup3;/slug)</option>
+                <option value="uk_gallons_per_pound">UK gallons per pound (gal (UK)/lb)</option>
+                <option value="us_gallons_per_pound">US gallons per pound (gal (US)/lb)</option>
+                <option value="cubic_feet_per_pound">Cubic feet per pound (ft&sup3;/lb)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertSpecificVolume()">
+              <optgroup label="Metric">
+                <option value="cubic_centimetres_per_gram">Cubic centimetres per gram (cm&sup3;/g)</option>
+                <option value="millilitres_per_gram">Millilitres per gram (mL/g)</option>
+                <option value="litres_per_kilogram">Litres per kilogram (L/kg)</option>
+                <option value="cubic_metres_per_tonne">Cubic metres per tonne (m&sup3;/t)</option>
+                <option value="cubic_metres_per_kilogram">Cubic metres per kilogram (m&sup3;/kg)</option>
+                <option value="cubic_metres_per_gram">Cubic metres per gram (m&sup3;/g)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="cubic_inches_per_pound">Cubic inches per pound (in&sup3;/lb)</option>
+                <option value="cubic_feet_per_slug">Cubic feet per slug (ft&sup3;/slug)</option>
+                <option value="uk_gallons_per_pound">UK gallons per pound (gal (UK)/lb)</option>
+                <option value="us_gallons_per_pound">US gallons per pound (gal (US)/lb)</option>
+                <option value="cubic_feet_per_pound" selected>Cubic feet per pound (ft&sup3;/lb)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Specific Volume Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Specific Volume Conversions</h2>
+      <ul>
+        <li>1 m&sup3;/kg = 1000 L/kg = 1000 cm&sup3;/g &asymp; 16.018 ft&sup3;/lb &asymp; 27 679.9 in&sup3;/lb</li>
+        <li>1 cm&sup3;/g = 1 mL/g = 1 L/kg = 1 m&sup3;/t = 10<sup>-3</sup> m&sup3;/kg &asymp; 0.016018 ft&sup3;/lb</li>
+        <li>1 ft&sup3;/lb &asymp; 0.062428 m&sup3;/kg = 62.428 L/kg &asymp; 62.428 cm&sup3;/g</li>
+        <li>1 ft&sup3;/slug &asymp; 1.940 &times; 10<sup>-3</sup> m&sup3;/kg &asymp; 0.031081 ft&sup3;/lb</li>
+        <li>1 gal (US)/lb &asymp; 8.345 &times; 10<sup>-3</sup> m&sup3;/kg = 8.345 L/kg &asymp; 0.1337 ft&sup3;/lb</li>
+        <li>1 gal (UK)/lb &asymp; 1.002 &times; 10<sup>-2</sup> m&sup3;/kg = 10.022 L/kg &asymp; 0.16054 ft&sup3;/lb</li>
+        <li>Steam at 100&deg;C (sat. vapour, 0.1013 MPa) &asymp; 1.674 m&sup3;/kg &asymp; 26.80 ft&sup3;/lb</li>
+        <li>Air at 20&deg;C, 1 atm &asymp; 0.8303 m&sup3;/kg &asymp; 13.30 ft&sup3;/lb &asymp; 830.3 L/kg</li>
+        <li>1 m&sup3;/g = 1000 m&sup3;/kg = 10<sup>6</sup> cm&sup3;/g (ultra-low-density media)</li>
+        <li>Water at 4&deg;C: specific volume &asymp; 1.00013 &times; 10<sup>-3</sup> m&sup3;/kg &asymp; 1.000 cm&sup3;/g</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/engineering/specific-volume-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Cubic centimetres per gram', s:'cubic_centimetres_per_gram'},
+      {n:'Millilitres per gram',        s:'millilitres_per_gram'},
+      {n:'Litres per kilogram',         s:'litres_per_kilogram'},
+      {n:'Cubic inches per pound',      s:'cubic_inches_per_pound'},
+      {n:'Cubic feet per slug',         s:'cubic_feet_per_slug'},
+      {n:'Cubic metres per tonne',      s:'cubic_metres_per_tonne'},
+      {n:'Cubic metres per kilogram',   s:'cubic_metres_per_kilogram'},
+      {n:'Cubic feet per pound',        s:'cubic_feet_per_pound'},
+      {n:'UK gallons per pound',        s:'uk_gallons_per_pound'},
+      {n:'US gallons per pound',        s:'us_gallons_per_pound'},
+      {n:'Cubic metres per gram',       s:'cubic_metres_per_gram'}
+    ];
+    var cat = 'engineering/specific-volume';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

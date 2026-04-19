@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Convert Celsius to Newton (°C to °N) | UnitConverter</title>
+  <meta name="description" content="Free online Celsius to Newton converter. 1 Celsius = 0.33 Newton. Instant and accurate.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://onunitconverter.com/basic/temperature/celsius-to-newton/">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><a href="/converters/basic/temperature.html">Temperature Converter</a></li>
+          <li><span>Celsius to Newton</span></li>
+        </ol>
+      </nav>
+
+      <h1>Convert Celsius to Newton</h1>
+
+      <p>
+        Convert <strong>Celsius (°C)</strong>
+        to <strong>Newton (°N)</strong> instantly and accurately.
+      </p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box">
+        <div class="converter-grid">
+
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" value="1" step="any" oninput="convertTemperature()">
+            <span class="unit-badge">Celsius (°C)</span>
+            <select id="fromUnit" hidden>
+              <option value="celsius" selected>Celsius (°C)</option>
+            </select>
+          </div>
+
+          <div class="converter-row">
+            <label>To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <span class="unit-badge">Newton (°N)</span>
+            <select id="toUnit" hidden>
+              <option value="newton" selected>Newton (°N)</option>
+            </select>
+          </div>
+
+          <a href="/basic/temperature/newton-to-celsius/" class="swap-btn swap-btn-main" title="Swap: convert Newton to Celsius"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></a>
+
+        </div>
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <pre class="formula">°N = °C × 33/100</pre>
+
+      <h2>About Celsius</h2>
+      <p>Celsius (°C) is the most widely used temperature scale worldwide, named after Swedish astronomer Anders Celsius (1742). It's based on the freezing point of water at 0°C and boiling point at 100°C under standard atmospheric pressure (1 atmosphere). This makes it intuitive for daily use: room temperature is around 20-22°C, body temperature is 37°C, and a hot summer day might reach 35-40°C. It's the standard in science, medicine, and weather reporting in most countries.</p>
+
+      <h2>About Newton</h2>
+      <p>Newton (°N) was devised by Isaac Newton around 1700 and published anonymously in 1701. The scale places water's freezing point at 0°N and boiling point at 33°N - a choice that allowed body temperature to fall at approximately 12°N. Newton used linseed oil as the thermometric fluid and described his scale in the Philosophical Transactions of the Royal Society. Although never widely adopted, it is historically significant as one of the earliest systematic temperature scales and directly inspired Ole Rømer, who visited Newton, and later Daniel Gabriel Fahrenheit, who built upon Rømer's work.</p>
+
+      <h2>Quick Reference Table</h2>
+      <table class="ref-table">
+          <thead><tr><th>Celsius (°C)</th><th>Newton (°N)</th></tr></thead>
+          <tbody>
+          <tr><td>-40 °C</td><td>-13.2 °N</td></tr>
+          <tr><td>0 °C</td><td>0 °N</td></tr>
+          <tr><td>20 °C</td><td>6.6 °N</td></tr>
+          <tr><td>37 °C</td><td>12.21 °N</td></tr>
+          <tr><td>100 °C</td><td>33 °N</td></tr>
+          <tr><td>200 °C</td><td>66 °N</td></tr>
+          </tbody>
+        </table>
+
+      <p><a href="/converters/basic/temperature.html">&rarr; Full Temperature Converter</a></p>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/temperature-converter.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var inp = document.getElementById('fromValue');
+      var v = new URLSearchParams(location.search).get('v');
+      if (v !== null && v !== '' && isFinite(v)) inp.value = v;
+      var swapBtn = document.querySelector('.swap-btn-main');
+      if (swapBtn) swapBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var val = inp.value;
+        var dest = swapBtn.getAttribute('href');
+        location.href = dest + (val !== '' ? '?v=' + encodeURIComponent(val) : '');
+      });
+      try { convertTemperature(); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>

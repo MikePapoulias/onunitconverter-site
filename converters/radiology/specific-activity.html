@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Specific Activity Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all specific activity units instantly. Becquerels per kilogram, curies per kilogram, dpm/g, pCi/g and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/radiology/">Radiology Converters</a></li>
+          <li><span>Specific Activity Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Specific Activity Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all specific activity units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: becquerel per kilogram (Bq/kg)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="becquerels_per_kilogram">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertSpecificActivity()">
+            <select id="fromUnit" onchange="convertSpecificActivity()">
+              <optgroup label="SI units (Bq/kg)">
+                <option value="femtobecquerels_per_kilogram">Femtobecquerels per kilogram (fBq/kg)</option>
+                <option value="picobecquerels_per_kilogram">Picobecquerels per kilogram (pBq/kg)</option>
+                <option value="nanobecquerels_per_kilogram">Nanobecquerels per kilogram (nBq/kg)</option>
+                <option value="microbecquerels_per_kilogram">Microbecquerels per kilogram (&micro;Bq/kg)</option>
+                <option value="millibecquerels_per_kilogram">Millibecquerels per kilogram (mBq/kg)</option>
+                <option value="becquerels_per_kilogram" selected>Becquerels per kilogram (Bq/kg)</option>
+                <option value="kilobecquerels_per_kilogram">Kilobecquerels per kilogram (kBq/kg)</option>
+                <option value="megabecquerels_per_kilogram">Megabecquerels per kilogram (MBq/kg)</option>
+                <option value="gigabecquerels_per_kilogram">Gigabecquerels per kilogram (GBq/kg)</option>
+                <option value="terabecquerels_per_kilogram">Terabecquerels per kilogram (TBq/kg)</option>
+                <option value="petabecquerels_per_kilogram">Petabecquerels per kilogram (PBq/kg)</option>
+              </optgroup>
+              <optgroup label="Curie-based (non-SI)">
+                <option value="picocuries_per_kilogram">Picocuries per kilogram (pCi/kg)</option>
+                <option value="disintegrations_per_minute_per_gram">Disintegrations per minute per gram (dpm/g)</option>
+                <option value="nanocuries_per_kilogram">Nanocuries per kilogram (nCi/kg)</option>
+                <option value="microcuries_per_kilogram">Microcuries per kilogram (&micro;Ci/kg)</option>
+                <option value="millicuries_per_kilogram">Millicuries per kilogram (mCi/kg)</option>
+                <option value="curies_per_kilogram">Curies per kilogram (Ci/kg)</option>
+                <option value="kilocuries_per_kilogram">Kilocuries per kilogram (kCi/kg)</option>
+                <option value="megacuries_per_kilogram">Megacuries per kilogram (MCi/kg)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertSpecificActivity()">
+              <optgroup label="SI units (Bq/kg)">
+                <option value="femtobecquerels_per_kilogram">Femtobecquerels per kilogram (fBq/kg)</option>
+                <option value="picobecquerels_per_kilogram">Picobecquerels per kilogram (pBq/kg)</option>
+                <option value="nanobecquerels_per_kilogram">Nanobecquerels per kilogram (nBq/kg)</option>
+                <option value="microbecquerels_per_kilogram">Microbecquerels per kilogram (&micro;Bq/kg)</option>
+                <option value="millibecquerels_per_kilogram">Millibecquerels per kilogram (mBq/kg)</option>
+                <option value="becquerels_per_kilogram">Becquerels per kilogram (Bq/kg)</option>
+                <option value="kilobecquerels_per_kilogram">Kilobecquerels per kilogram (kBq/kg)</option>
+                <option value="megabecquerels_per_kilogram">Megabecquerels per kilogram (MBq/kg)</option>
+                <option value="gigabecquerels_per_kilogram">Gigabecquerels per kilogram (GBq/kg)</option>
+                <option value="terabecquerels_per_kilogram">Terabecquerels per kilogram (TBq/kg)</option>
+                <option value="petabecquerels_per_kilogram">Petabecquerels per kilogram (PBq/kg)</option>
+              </optgroup>
+              <optgroup label="Curie-based (non-SI)">
+                <option value="picocuries_per_kilogram">Picocuries per kilogram (pCi/kg)</option>
+                <option value="disintegrations_per_minute_per_gram">Disintegrations per minute per gram (dpm/g)</option>
+                <option value="nanocuries_per_kilogram">Nanocuries per kilogram (nCi/kg)</option>
+                <option value="microcuries_per_kilogram">Microcuries per kilogram (&micro;Ci/kg)</option>
+                <option value="millicuries_per_kilogram">Millicuries per kilogram (mCi/kg)</option>
+                <option value="curies_per_kilogram" selected>Curies per kilogram (Ci/kg)</option>
+                <option value="kilocuries_per_kilogram">Kilocuries per kilogram (kCi/kg)</option>
+                <option value="megacuries_per_kilogram">Megacuries per kilogram (MCi/kg)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Specific Activity Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Specific Activity Conversions</h2>
+      <ul>
+        <li>1 Ci/g = 3.7 &times; 10<sup>13</sup> Bq/kg (exact) = 1 kCi/kg</li>
+        <li>1 Bq/kg = 1 mBq/g = 10<sup>-3</sup> Bq/g</li>
+        <li>1 kBq/kg = 1 Bq/g &nbsp;|&nbsp; 1 MBq/kg = 1 kBq/g</li>
+        <li>1 nCi/kg = 37 Bq/kg &asymp; 1 pCi/g (= pCi per gram)</li>
+        <li>1 dpm/g = 1000/60 Bq/kg &asymp; 16.67 Bq/kg</li>
+        <li>Specific activity of <sup>226</sup>Ra (pure): &asymp; 37 GBq/g = 37 TBq/kg = 1 Ci/g</li>
+        <li>Natural potassium (<sup>40</sup>K, 0.0117 %): &asymp; 31.3 Bq/g = 31.3 kBq/kg</li>
+        <li>EU food safety limit for <sup>137</sup>Cs: 600 Bq/kg (general foods)</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/radiology/specific-activity-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Femtobecquerels per kilogram',              s:'femtobecquerels-per-kilogram'},
+      {n:'Picobecquerels per kilogram',               s:'picobecquerels-per-kilogram'},
+      {n:'Nanobecquerels per kilogram',               s:'nanobecquerels-per-kilogram'},
+      {n:'Microbecquerels per kilogram',              s:'microbecquerels-per-kilogram'},
+      {n:'Millibecquerels per kilogram',              s:'millibecquerels-per-kilogram'},
+      {n:'Picocuries per kilogram',                   s:'picocuries-per-kilogram'},
+      {n:'Becquerels per kilogram',                   s:'becquerels-per-kilogram'},
+      {n:'Disintegrations per minute per gram',       s:'disintegrations-per-minute-per-gram'},
+      {n:'Nanocuries per kilogram',                   s:'nanocuries-per-kilogram'},
+      {n:'Kilobecquerels per kilogram',               s:'kilobecquerels-per-kilogram'},
+      {n:'Microcuries per kilogram',                  s:'microcuries-per-kilogram'},
+      {n:'Megabecquerels per kilogram',               s:'megabecquerels-per-kilogram'},
+      {n:'Millicuries per kilogram',                  s:'millicuries-per-kilogram'},
+      {n:'Gigabecquerels per kilogram',               s:'gigabecquerels-per-kilogram'},
+      {n:'Curies per kilogram',                       s:'curies-per-kilogram'},
+      {n:'Terabecquerels per kilogram',               s:'terabecquerels-per-kilogram'},
+      {n:'Kilocuries per kilogram',                   s:'kilocuries-per-kilogram'},
+      {n:'Petabecquerels per kilogram',               s:'petabecquerels-per-kilogram'},
+      {n:'Megacuries per kilogram',                   s:'megacuries-per-kilogram'}
+    ];
+    var cat = 'radiology/specific-activity';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Concentration Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all activity concentration units instantly. Becquerels per cubic metre, Bq/L, pCi/L, nCi/m&sup3;, dpm/mL and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/radiology/">Radiology Converters</a></li>
+          <li><span>Activity Concentration Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Activity Concentration Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all activity concentration units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: becquerel per cubic metre (Bq/m&sup3;)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="becquerels_per_cubic_metre">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertActivityConcentration()">
+            <select id="fromUnit" onchange="convertActivityConcentration()">
+              <optgroup label="SI units (Bq/m&sup3;)">
+                <option value="femtobecquerels_per_cubic_metre">Femtobecquerels per cubic metre (fBq/m&sup3;)</option>
+                <option value="picobecquerels_per_cubic_metre">Picobecquerels per cubic metre (pBq/m&sup3;)</option>
+                <option value="nanobecquerels_per_cubic_metre">Nanobecquerels per cubic metre (nBq/m&sup3;)</option>
+                <option value="microbecquerels_per_cubic_metre">Microbecquerels per cubic metre (&micro;Bq/m&sup3;)</option>
+                <option value="millibecquerels_per_cubic_metre">Millibecquerels per cubic metre (mBq/m&sup3;)</option>
+                <option value="becquerels_per_cubic_metre" selected>Becquerels per cubic metre (Bq/m&sup3;)</option>
+                <option value="kilobecquerels_per_cubic_metre">Kilobecquerels per cubic metre (kBq/m&sup3;)</option>
+                <option value="megabecquerels_per_cubic_metre">Megabecquerels per cubic metre (MBq/m&sup3;)</option>
+                <option value="gigabecquerels_per_cubic_metre">Gigabecquerels per cubic metre (GBq/m&sup3;)</option>
+                <option value="terabecquerels_per_cubic_metre">Terabecquerels per cubic metre (TBq/m&sup3;)</option>
+              </optgroup>
+              <optgroup label="Curie/dpm-based (non-SI)">
+                <option value="disintegrations_per_minute_per_cubic_metre">Disintegrations per minute per cubic metre (dpm/m&sup3;)</option>
+                <option value="picocuries_per_cubic_metre">Picocuries per cubic metre (pCi/m&sup3;)</option>
+                <option value="disintegrations_per_minute_per_litre">Disintegrations per minute per litre (dpm/L)</option>
+                <option value="nanocuries_per_cubic_metre" selected>Nanocuries per cubic metre (nCi/m&sup3;)</option>
+                <option value="disintegrations_per_minute_per_millilitre">Disintegrations per minute per millilitre (dpm/mL)</option>
+                <option value="microcuries_per_cubic_metre">Microcuries per cubic metre (&micro;Ci/m&sup3;)</option>
+                <option value="millicuries_per_cubic_metre">Millicuries per cubic metre (mCi/m&sup3;)</option>
+                <option value="curies_per_cubic_metre">Curies per cubic metre (Ci/m&sup3;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertActivityConcentration()">
+              <optgroup label="SI units (Bq/m&sup3;)">
+                <option value="femtobecquerels_per_cubic_metre">Femtobecquerels per cubic metre (fBq/m&sup3;)</option>
+                <option value="picobecquerels_per_cubic_metre">Picobecquerels per cubic metre (pBq/m&sup3;)</option>
+                <option value="nanobecquerels_per_cubic_metre">Nanobecquerels per cubic metre (nBq/m&sup3;)</option>
+                <option value="microbecquerels_per_cubic_metre">Microbecquerels per cubic metre (&micro;Bq/m&sup3;)</option>
+                <option value="millibecquerels_per_cubic_metre">Millibecquerels per cubic metre (mBq/m&sup3;)</option>
+                <option value="becquerels_per_cubic_metre">Becquerels per cubic metre (Bq/m&sup3;)</option>
+                <option value="kilobecquerels_per_cubic_metre">Kilobecquerels per cubic metre (kBq/m&sup3;)</option>
+                <option value="megabecquerels_per_cubic_metre">Megabecquerels per cubic metre (MBq/m&sup3;)</option>
+                <option value="gigabecquerels_per_cubic_metre">Gigabecquerels per cubic metre (GBq/m&sup3;)</option>
+                <option value="terabecquerels_per_cubic_metre">Terabecquerels per cubic metre (TBq/m&sup3;)</option>
+              </optgroup>
+              <optgroup label="Curie/dpm-based (non-SI)">
+                <option value="disintegrations_per_minute_per_cubic_metre">Disintegrations per minute per cubic metre (dpm/m&sup3;)</option>
+                <option value="picocuries_per_cubic_metre">Picocuries per cubic metre (pCi/m&sup3;)</option>
+                <option value="disintegrations_per_minute_per_litre">Disintegrations per minute per litre (dpm/L)</option>
+                <option value="nanocuries_per_cubic_metre">Nanocuries per cubic metre (nCi/m&sup3;)</option>
+                <option value="disintegrations_per_minute_per_millilitre">Disintegrations per minute per millilitre (dpm/mL)</option>
+                <option value="microcuries_per_cubic_metre">Microcuries per cubic metre (&micro;Ci/m&sup3;)</option>
+                <option value="millicuries_per_cubic_metre">Millicuries per cubic metre (mCi/m&sup3;)</option>
+                <option value="curies_per_cubic_metre" selected>Curies per cubic metre (Ci/m&sup3;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Activity Concentration Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Activity Concentration Conversions</h2>
+      <ul>
+        <li>1 nCi/m&sup3; = 37 Bq/m&sup3; = 1 pCi/L (exact; US radon unit equivalence)</li>
+        <li>WHO indoor radon reference level: 100 Bq/m&sup3; &asymp; 2.70 pCi/L</li>
+        <li>US EPA indoor radon action level: 4 pCi/L = 148 Bq/m&sup3;</li>
+        <li>EU residential radon reference level: 300 Bq/m&sup3; (Directive 2013/59/Euratom)</li>
+        <li>1 kBq/m&sup3; = 1 Bq/L &nbsp;|&nbsp; 1 MBq/m&sup3; = 1 kBq/L</li>
+        <li>1 dpm/L = 1000/60 Bq/m&sup3; &asymp; 16.67 Bq/m&sup3;</li>
+        <li>Outdoor background <sup>222</sup>Rn: 5-15 Bq/m&sup3; globally</li>
+        <li>1 Ci/m&sup3; = 3.7 &times; 10<sup>10</sup> Bq/m&sup3; (exact)</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/radiology/activity-concentration-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Femtobecquerels per cubic metre',              s:'femtobecquerels-per-cubic-metre'},
+      {n:'Picobecquerels per cubic metre',               s:'picobecquerels-per-cubic-metre'},
+      {n:'Nanobecquerels per cubic metre',               s:'nanobecquerels-per-cubic-metre'},
+      {n:'Microbecquerels per cubic metre',              s:'microbecquerels-per-cubic-metre'},
+      {n:'Millibecquerels per cubic metre',              s:'millibecquerels-per-cubic-metre'},
+      {n:'Disintegrations per minute per cubic metre',   s:'disintegrations-per-minute-per-cubic-metre'},
+      {n:'Picocuries per cubic metre',                   s:'picocuries-per-cubic-metre'},
+      {n:'Becquerels per cubic metre',                   s:'becquerels-per-cubic-metre'},
+      {n:'Disintegrations per minute per litre',         s:'disintegrations-per-minute-per-litre'},
+      {n:'Nanocuries per cubic metre',                   s:'nanocuries-per-cubic-metre'},
+      {n:'Kilobecquerels per cubic metre',               s:'kilobecquerels-per-cubic-metre'},
+      {n:'Disintegrations per minute per millilitre',    s:'disintegrations-per-minute-per-millilitre'},
+      {n:'Microcuries per cubic metre',                  s:'microcuries-per-cubic-metre'},
+      {n:'Megabecquerels per cubic metre',               s:'megabecquerels-per-cubic-metre'},
+      {n:'Millicuries per cubic metre',                  s:'millicuries-per-cubic-metre'},
+      {n:'Gigabecquerels per cubic metre',               s:'gigabecquerels-per-cubic-metre'},
+      {n:'Curies per cubic metre',                       s:'curies-per-cubic-metre'},
+      {n:'Terabecquerels per cubic metre',               s:'terabecquerels-per-cubic-metre'}
+    ];
+    var cat = 'radiology/activity-concentration';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

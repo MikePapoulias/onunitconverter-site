@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Thermal Diffusivity Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all thermal diffusivity units instantly. Square metres per second, cm&sup2;/s, mm&sup2;/s, ft&sup2;/h, ft&sup2;/s and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/heat/">Heat Converters</a></li>
+          <li><span>Thermal Diffusivity Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Thermal Diffusivity Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all thermal diffusivity units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: square metre per second (m&sup2;/s)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="square_metres_per_second">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertThermalDiffusivity()">
+            <select id="fromUnit" onchange="convertThermalDiffusivity()">
+              <optgroup label="Metric">
+                <option value="square_millimetres_per_hour">Square millimetres per hour (mm&sup2;/h)</option>
+                <option value="square_millimetres_per_minute">Square millimetres per minute (mm&sup2;/min)</option>
+                <option value="square_millimetres_per_second">Square millimetres per second (mm&sup2;/s)</option>
+                <option value="square_centimetres_per_hour">Square centimetres per hour (cm&sup2;/h)</option>
+                <option value="square_centimetres_per_minute">Square centimetres per minute (cm&sup2;/min)</option>
+                <option value="square_centimetres_per_second">Square centimetres per second (cm&sup2;/s)</option>
+                <option value="square_decimetres_per_second">Square decimetres per second (dm&sup2;/s)</option>
+                <option value="square_metres_per_hour">Square metres per hour (m&sup2;/h)</option>
+                <option value="square_metres_per_minute">Square metres per minute (m&sup2;/min)</option>
+                <option value="square_metres_per_second">Square metres per second (m&sup2;/s)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="square_inches_per_hour">Square inches per hour (in&sup2;/h)</option>
+                <option value="square_inches_per_minute">Square inches per minute (in&sup2;/min)</option>
+                <option value="square_inches_per_second">Square inches per second (in&sup2;/s)</option>
+                <option value="square_feet_per_hour" selected>Square feet per hour (ft&sup2;/h)</option>
+                <option value="square_feet_per_minute">Square feet per minute (ft&sup2;/min)</option>
+                <option value="square_feet_per_second">Square feet per second (ft&sup2;/s)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertThermalDiffusivity()">
+              <optgroup label="Metric">
+                <option value="square_millimetres_per_hour">Square millimetres per hour (mm&sup2;/h)</option>
+                <option value="square_millimetres_per_minute">Square millimetres per minute (mm&sup2;/min)</option>
+                <option value="square_millimetres_per_second">Square millimetres per second (mm&sup2;/s)</option>
+                <option value="square_centimetres_per_hour">Square centimetres per hour (cm&sup2;/h)</option>
+                <option value="square_centimetres_per_minute">Square centimetres per minute (cm&sup2;/min)</option>
+                <option value="square_centimetres_per_second">Square centimetres per second (cm&sup2;/s)</option>
+                <option value="square_decimetres_per_second">Square decimetres per second (dm&sup2;/s)</option>
+                <option value="square_metres_per_hour">Square metres per hour (m&sup2;/h)</option>
+                <option value="square_metres_per_minute">Square metres per minute (m&sup2;/min)</option>
+                <option value="square_metres_per_second" selected>Square metres per second (m&sup2;/s)</option>
+              </optgroup>
+              <optgroup label="Imperial">
+                <option value="square_inches_per_hour">Square inches per hour (in&sup2;/h)</option>
+                <option value="square_inches_per_minute">Square inches per minute (in&sup2;/min)</option>
+                <option value="square_inches_per_second">Square inches per second (in&sup2;/s)</option>
+                <option value="square_feet_per_hour">Square feet per hour (ft&sup2;/h)</option>
+                <option value="square_feet_per_minute">Square feet per minute (ft&sup2;/min)</option>
+                <option value="square_feet_per_second">Square feet per second (ft&sup2;/s)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Thermal Diffusivity Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Thermal Diffusivity Conversions</h2>
+      <ul>
+        <li>1 m&sup2;/s = 10<sup>6</sup> mm&sup2;/s = 10<sup>4</sup> cm&sup2;/s = 100 dm&sup2;/s &asymp; 10.764 ft&sup2;/s &asymp; 38 750 ft&sup2;/h</li>
+        <li>1 ft&sup2;/h &asymp; 2.5806 &times; 10<sup>-5</sup> m&sup2;/s &asymp; 25.806 mm&sup2;/s &asymp; 0.2581 cm&sup2;/s</li>
+        <li>1 ft&sup2;/s = 3600 ft&sup2;/h = 0.09290304 m&sup2;/s &asymp; 929.03 cm&sup2;/s = 92 903 mm&sup2;/s</li>
+        <li>1 cm&sup2;/s = 10<sup>-4</sup> m&sup2;/s = 100 mm&sup2;/s &asymp; 3.875 ft&sup2;/h</li>
+        <li>1 mm&sup2;/s = 10<sup>-6</sup> m&sup2;/s &asymp; 0.03875 ft&sup2;/h &asymp; 1.0764 &times; 10<sup>-5</sup> ft&sup2;/s</li>
+        <li>Diamond: &asymp; 5 &times; 10<sup>-4</sup> m&sup2;/s = 500 mm&sup2;/s &asymp; 19.4 ft&sup2;/h</li>
+        <li>Aluminium: &asymp; 8.4 &times; 10<sup>-5</sup> m&sup2;/s = 84 mm&sup2;/s &asymp; 3.25 ft&sup2;/h</li>
+        <li>Iron / steel: &asymp; 1.2&ndash;1.8 &times; 10<sup>-5</sup> m&sup2;/s = 12&ndash;18 mm&sup2;/s &asymp; 0.46&ndash;0.70 ft&sup2;/h</li>
+        <li>Concrete: &asymp; 6 &times; 10<sup>-7</sup> m&sup2;/s &asymp; 0.6 mm&sup2;/s &asymp; 0.023 ft&sup2;/h</li>
+        <li>Water (20&deg;C): &asymp; 1.43 &times; 10<sup>-7</sup> m&sup2;/s &asymp; 0.143 mm&sup2;/s &asymp; 0.00554 ft&sup2;/h</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/heat/thermal-diffusivity-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Square millimetres per hour',    s:'square_millimetres_per_hour'},
+      {n:'Square millimetres per minute',  s:'square_millimetres_per_minute'},
+      {n:'Square centimetres per hour',    s:'square_centimetres_per_hour'},
+      {n:'Square inches per hour',         s:'square_inches_per_hour'},
+      {n:'Square millimetres per second',  s:'square_millimetres_per_second'},
+      {n:'Square centimetres per minute',  s:'square_centimetres_per_minute'},
+      {n:'Square inches per minute',       s:'square_inches_per_minute'},
+      {n:'Square feet per hour',           s:'square_feet_per_hour'},
+      {n:'Square centimetres per second',  s:'square_centimetres_per_second'},
+      {n:'Square metres per hour',         s:'square_metres_per_hour'},
+      {n:'Square inches per second',       s:'square_inches_per_second'},
+      {n:'Square feet per minute',         s:'square_feet_per_minute'},
+      {n:'Square decimetres per second',   s:'square_decimetres_per_second'},
+      {n:'Square metres per minute',       s:'square_metres_per_minute'},
+      {n:'Square feet per second',         s:'square_feet_per_second'},
+      {n:'Square metres per second',       s:'square_metres_per_second'}
+    ];
+    var cat = 'heat/thermal-diffusivity';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

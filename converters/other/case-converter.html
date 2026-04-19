@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Case Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert text between upper case, lower case, capitalized case, sentence case, and normalize with space. Free online tool with character and word counter.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+    .case-counts {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+    .case-counts strong { color: #2166a5; }
+    #caseInput {
+      width: 100%;
+      min-height: 160px;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1.5px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    #caseInput:focus { outline: none; border-color: #2166a5; }
+    .case-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .case-buttons button { padding: 0.6rem 1.1rem; font-size: 0.95rem; }
+    #currentCaseState { display: none; font-size: 1rem; color: #2c3e50; white-space: nowrap; }
+    #currentCaseState .cs-name { color: #c0392b; font-weight: 700; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/other/">Other Converters</a></li>
+          <li><span>Case Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Case Converter</h1>
+
+      <p style="margin-bottom: 0.5rem;">
+        Convert text between upper case, lower case, capitalized case, sentence case, and normalize with space.
+        Type or paste your text in the box below, then click the desired transformation button.
+        The character and word counters update in real time.
+      </p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;">
+        <div class="case-counts">
+          <span>Character count: <strong id="charCount">0</strong></span>
+          <span>Word count: <strong id="wordCount">0</strong></span>
+          <span id="currentCaseState">Current case: <span class="cs-name"></span></span>
+        </div>
+        <textarea id="caseInput" placeholder="Type or paste your text here..."></textarea>
+        <div class="case-buttons">
+          <button type="button" onclick="applyCase('upperCase')">Upper Case</button>
+          <button type="button" onclick="applyCase('lowerCase')">Lower Case</button>
+          <button type="button" onclick="applyCase('capitalizedCase')">Capitalized Case</button>
+          <button type="button" onclick="applyCase('sentenceCase')">Sentence Case</button>
+          <button type="button" onclick="applyCase('normalizeWithSpace')">Normalize with Space</button>
+        </div>
+      </div>
+
+      <h2>About Each Case Format</h2>
+
+      <h3>Upper Case (ABC)</h3>
+      <p>
+        Converts every letter to its capital form; all non-letter characters (digits, punctuation, spaces)
+        are left unchanged. Commonly used for acronyms (NASA, HTML, SQL), brand logotypes (IBM, IKEA),
+        legal headings, and safety warnings.
+      </p>
+
+      <h3>Lower Case (abc)</h3>
+      <p>
+        Converts every letter to its small form; all non-letter characters remain unchanged. The default
+        convention for body text, URL paths, file names on Unix/Linux, CSS class names, and variable names
+        in most programming languages.
+      </p>
+
+      <h3>Capitalized Case (Abc)</h3>
+      <p>
+        Capitalizes the first letter of every word, leaving all other characters unchanged. Used for book
+        and film titles, product names, navigation menu items, and column headers where each word carries
+        equal typographic weight.
+      </p>
+
+      <h3>Sentence Case (Ab.)</h3>
+      <p>
+        Capitalizes only the first character of the text and the first character after any ". "
+        (period followed by a space). The standard style for body text and the recommended convention
+        in modern design systems (Material Design, Fluent UI, GitHub) for UI labels and button text.
+      </p>
+
+      <h3>Normalize with Space (a. b)</h3>
+      <p>
+        Applies two corrections: inserts a space after any period(.) or comma(,) not already followed by one, and 
+        collapses multiple consecutive spaces into a single space. Useful for cleaning text extracted 
+        from PDFs or pasted from spreadsheets - apply to plain prose only, not to URLs or code.
+      </p>
+
+      <h2>Quick Examples</h2>
+      <ul>
+        <li><strong>Upper Case:</strong> "hello world. this is a test." &rarr; "HELLO WORLD. THIS IS A TEST."</li>
+        <li><strong>Lower Case:</strong> "HELLO WORLD. THIS IS A TEST." &rarr; "hello world. this is a test."</li>
+        <li><strong>Capitalized Case:</strong> "hello world. this is a test." &rarr; "Hello World. This Is A Test."</li>
+        <li><strong>Sentence Case:</strong> "hello world. this is a test." &rarr; "Hello world. This is a test."</li>
+        <li><strong>Normalize with Space:</strong> "hello world,this&nbsp;&nbsp;&nbsp;is a&nbsp;&nbsp;test." &rarr; "hello world, this is a test."</li>
+      </ul>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/other/case-converter.js"></script>
+
+</body>
+
+</html>

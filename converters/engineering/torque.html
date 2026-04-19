@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Torque Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all torque units instantly. Newton metres, pound-force feet, kilogram-force metres, ounce-force inches, kilonewton metres, kip-feet and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/engineering/">Engineering Converters</a></li>
+          <li><span>Torque Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Torque Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all torque units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: newton metre (N&middot;m)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="newton_metres">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertTorque()">
+            <select id="fromUnit" onchange="convertTorque()">
+              <optgroup label="Metric">
+                <option value="dyne_centimetres">Dyne centimetres (dyn&middot;cm)</option>
+                <option value="gram_force_millimetres">Gram-force millimetres (gf&middot;mm)</option>
+                <option value="gram_force_centimetres">Gram-force centimetres (gf&middot;cm)</option>
+                <option value="newton_millimetres">Newton millimetres (N&middot;mm)</option>
+                <option value="gram_force_metres">Gram-force metres (gf&middot;m)</option>
+                <option value="newton_centimetres">Newton centimetres (N&middot;cm)</option>
+                <option value="kilogram_force_centimetres">Kilogram-force centimetres (kgf&middot;cm)</option>
+                <option value="newton_metres">Newton metres (N&middot;m)</option>
+                <option value="kilogram_force_metres">Kilogram-force metres (kgf&middot;m)</option>
+                <option value="kilonewton_metres">Kilonewton metres (kN&middot;m)</option>
+                <option value="meganewton_metres">Meganewton metres (MN&middot;m)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="ounce_force_inches">Ounce-force inches (ozf&middot;in)</option>
+                <option value="poundal_feet">Poundal feet (pdl&middot;ft)</option>
+                <option value="pound_force_inches">Pound-force inches (lbf&middot;in)</option>
+                <option value="pound_force_feet" selected>Pound-force feet (lbf&middot;ft)</option>
+                <option value="kilopound_force_feet">Kilopound-force feet (kip&middot;ft)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertTorque()">
+              <optgroup label="Metric">
+                <option value="dyne_centimetres">Dyne centimetres (dyn&middot;cm)</option>
+                <option value="gram_force_millimetres">Gram-force millimetres (gf&middot;mm)</option>
+                <option value="gram_force_centimetres">Gram-force centimetres (gf&middot;cm)</option>
+                <option value="newton_millimetres">Newton millimetres (N&middot;mm)</option>
+                <option value="gram_force_metres">Gram-force metres (gf&middot;m)</option>
+                <option value="newton_centimetres">Newton centimetres (N&middot;cm)</option>
+                <option value="kilogram_force_centimetres">Kilogram-force centimetres (kgf&middot;cm)</option>
+                <option value="newton_metres" selected>Newton metres (N&middot;m)</option>
+                <option value="kilogram_force_metres">Kilogram-force metres (kgf&middot;m)</option>
+                <option value="kilonewton_metres">Kilonewton metres (kN&middot;m)</option>
+                <option value="meganewton_metres">Meganewton metres (MN&middot;m)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="ounce_force_inches">Ounce-force inches (ozf&middot;in)</option>
+                <option value="poundal_feet">Poundal feet (pdl&middot;ft)</option>
+                <option value="pound_force_inches">Pound-force inches (lbf&middot;in)</option>
+                <option value="pound_force_feet">Pound-force feet (lbf&middot;ft)</option>
+                <option value="kilopound_force_feet">Kilopound-force feet (kip&middot;ft)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Torque Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Torque Conversions</h2>
+      <ul>
+        <li>1 N&middot;m = 100 N&middot;cm = 1000 N&middot;mm &asymp; 8.851 lbf&middot;in &asymp; 0.7376 lbf&middot;ft &asymp; 0.1020 kgf&middot;m</li>
+        <li>1 lbf&middot;ft &asymp; 1.35582 N&middot;m = 12 lbf&middot;in &asymp; 192 ozf&middot;in &asymp; 0.1383 kgf&middot;m</li>
+        <li>1 lbf&middot;in &asymp; 0.11299 N&middot;m = 16 ozf&middot;in = 1/12 lbf&middot;ft &asymp; 11.52 N&middot;cm</li>
+        <li>1 kgf&middot;m = 9.80665 N&middot;m = 100 kgf&middot;cm &asymp; 7.233 lbf&middot;ft &asymp; 86.80 lbf&middot;in</li>
+        <li>1 kgf&middot;cm = 0.0980665 N&middot;m = 100 gf&middot;cm &asymp; 13.89 ozf&middot;in &asymp; 0.8681 lbf&middot;in</li>
+        <li>1 kN&middot;m = 1000 N&middot;m &asymp; 737.6 lbf&middot;ft = 0.7376 kip&middot;ft &asymp; 102.0 kgf&middot;m</li>
+        <li>1 kip&middot;ft = 1000 lbf&middot;ft &asymp; 1355.82 N&middot;m &asymp; 1.35582 kN&middot;m &asymp; 138.3 kgf&middot;m</li>
+        <li>1 ozf&middot;in &asymp; 7.062 &times; 10<sup>-3</sup> N&middot;m = 1/16 lbf&middot;in &asymp; 72.0 gf&middot;cm</li>
+        <li>1 MN&middot;m = 1000 kN&middot;m &asymp; 737 562 lbf&middot;ft &asymp; 737.6 kip&middot;ft</li>
+        <li>1 pdl&middot;ft &asymp; 0.04214 N&middot;m &asymp; 0.3730 lbf&middot;in &asymp; 430.0 gf&middot;cm</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/engineering/torque-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Dyne centimetres',              s:'dyne_centimetres'},
+      {n:'Gram-force millimetres',        s:'gram_force_millimetres'},
+      {n:'Gram-force centimetres',        s:'gram_force_centimetres'},
+      {n:'Newton millimetres',            s:'newton_millimetres'},
+      {n:'Ounce-force inches',            s:'ounce_force_inches'},
+      {n:'Gram-force metres',             s:'gram_force_metres'},
+      {n:'Newton centimetres',            s:'newton_centimetres'},
+      {n:'Poundal feet',                  s:'poundal_feet'},
+      {n:'Kilogram-force centimetres',    s:'kilogram_force_centimetres'},
+      {n:'Pound-force inches',            s:'pound_force_inches'},
+      {n:'Newton metres',                 s:'newton_metres'},
+      {n:'Pound-force feet',              s:'pound_force_feet'},
+      {n:'Kilogram-force metres',         s:'kilogram_force_metres'},
+      {n:'Kilonewton metres',             s:'kilonewton_metres'},
+      {n:'Kilopound-force feet',          s:'kilopound_force_feet'},
+      {n:'Meganewton metres',             s:'meganewton_metres'}
+    ];
+    var cat = 'engineering/torque';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

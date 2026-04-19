@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Magnetic Flux Density Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all magnetic flux density units instantly. Teslas, gausses, milliteslas, microteslas, nanoteslas, milligausses, kiloteslas and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+          <li><span>Magnetic Flux Density Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Magnetic Flux Density Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all magnetic flux density units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: tesla (T)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="teslas">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertMagneticFluxDensity()">
+            <select id="fromUnit" onchange="convertMagneticFluxDensity()">
+              <optgroup label="SI units (T)">
+                <option value="femtoteslas">Femtoteslas (fT)</option>
+                <option value="picoteslas">Picoteslas (pT)</option>
+                <option value="nanoteslas">Nanoteslas (nT)</option>
+                <option value="microteslas">Microteslas (&micro;T)</option>
+                <option value="milliteslas">Milliteslas (mT)</option>
+                <option value="teslas" selected>Teslas (T)</option>
+                <option value="kiloteslas">Kiloteslas (kT)</option>
+                <option value="megateslas">Megateslas (MT)</option>
+              </optgroup>
+              <optgroup label="CGS &amp; other">
+                <option value="gammas">Gammas (&gamma;)</option>
+                <option value="milligausses">Milligausses (mG)</option>
+                <option value="gausses">Gausses (G)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertMagneticFluxDensity()">
+              <optgroup label="SI units (T)">
+                <option value="femtoteslas">Femtoteslas (fT)</option>
+                <option value="picoteslas">Picoteslas (pT)</option>
+                <option value="nanoteslas">Nanoteslas (nT)</option>
+                <option value="microteslas">Microteslas (&micro;T)</option>
+                <option value="milliteslas">Milliteslas (mT)</option>
+                <option value="teslas">Teslas (T)</option>
+                <option value="kiloteslas">Kiloteslas (kT)</option>
+                <option value="megateslas">Megateslas (MT)</option>
+              </optgroup>
+              <optgroup label="CGS &amp; other">
+                <option value="gammas">Gammas (&gamma;)</option>
+                <option value="milligausses">Milligausses (mG)</option>
+                <option value="gausses" selected>Gausses (G)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Magnetic Flux Density Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Magnetic Flux Density Conversions</h2>
+      <ul>
+        <li>1 T = 10<sup>4</sup> G (exact; 1 tesla = 10 000 gauss)</li>
+        <li>1 G = 10<sup>-4</sup> T (exact; 1 gauss = 100 &micro;T)</li>
+        <li>1 &gamma; = 1 nT = 10<sup>-9</sup> T (exact; gamma used in geomagnetic surveys)</li>
+        <li>1 mG = 0.1 &micro;T = 10<sup>-7</sup> T (EMF safety assessments unit)</li>
+        <li>Earth surface field: 25 000-65 000 nT (25-65 &micro;T, &asymp; 0.25-0.65 G)</li>
+        <li>Clinical MRI: 1.5 T or 3 T (15 000 or 30 000 G)</li>
+        <li>NdFeB permanent magnet remanence: 1.0-1.4 T (10 000-14 000 G)</li>
+        <li>Strongest continuous electromagnet: 45 T (NHMFL, Tallahassee)</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/magnetism/magnetic-flux-density-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Femtoteslas',    s:'femtoteslas'},
+      {n:'Picoteslas',     s:'picoteslas'},
+      {n:'Nanoteslas',     s:'nanoteslas'},
+      {n:'Gammas',         s:'gammas'},
+      {n:'Milligausses',   s:'milligausses'},
+      {n:'Microteslas',    s:'microteslas'},
+      {n:'Gausses',        s:'gausses'},
+      {n:'Milliteslas',    s:'milliteslas'},
+      {n:'Teslas',         s:'teslas'},
+      {n:'Kiloteslas',     s:'kiloteslas'},
+      {n:'Megateslas',     s:'megateslas'}
+    ];
+    var cat = 'magnetism/magnetic-flux-density';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

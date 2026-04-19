@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Moment of Inertia Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all moment of inertia units instantly. Kilogram square metres, pound square feet, slug square feet, kilogram square centimetres, gram square centimetres and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/engineering/">Engineering Converters</a></li>
+          <li><span>Moment of Inertia Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Moment of Inertia Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all moment of inertia units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: kilogram square metre (kg&middot;m&sup2;)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="kilograms_square_metres">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertMomentOfInertia()">
+            <select id="fromUnit" onchange="convertMomentOfInertia()">
+              <optgroup label="Metric">
+                <option value="grams_square_millimetres">Gram square millimetres (g&middot;mm&sup2;)</option>
+                <option value="grams_square_centimetres">Gram square centimetres (g&middot;cm&sup2;)</option>
+                <option value="kilograms_square_millimetres">Kilogram square millimetres (kg&middot;mm&sup2;)</option>
+                <option value="kilograms_square_centimetres">Kilogram square centimetres (kg&middot;cm&sup2;)</option>
+                <option value="grams_square_metres">Gram square metres (g&middot;m&sup2;)</option>
+                <option value="kilograms_square_decimetres">Kilogram square decimetres (kg&middot;dm&sup2;)</option>
+                <option value="kilograms_square_metres">Kilogram square metres (kg&middot;m&sup2;)</option>
+                <option value="tonnes_square_metres">Tonne square metres (t&middot;m&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="ounces_square_inches">Ounce square inches (oz&middot;in&sup2;)</option>
+                <option value="pounds_square_inches">Pound square inches (lb&middot;in&sup2;)</option>
+                <option value="slugs_square_inches">Slug square inches (slug&middot;in&sup2;)</option>
+                <option value="pounds_square_feet" selected>Pound square feet (lb&middot;ft&sup2;)</option>
+                <option value="slugs_square_feet">Slug square feet (slug&middot;ft&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertMomentOfInertia()">
+              <optgroup label="Metric">
+                <option value="grams_square_millimetres">Gram square millimetres (g&middot;mm&sup2;)</option>
+                <option value="grams_square_centimetres">Gram square centimetres (g&middot;cm&sup2;)</option>
+                <option value="kilograms_square_millimetres">Kilogram square millimetres (kg&middot;mm&sup2;)</option>
+                <option value="kilograms_square_centimetres">Kilogram square centimetres (kg&middot;cm&sup2;)</option>
+                <option value="grams_square_metres">Gram square metres (g&middot;m&sup2;)</option>
+                <option value="kilograms_square_decimetres">Kilogram square decimetres (kg&middot;dm&sup2;)</option>
+                <option value="kilograms_square_metres" selected>Kilogram square metres (kg&middot;m&sup2;)</option>
+                <option value="tonnes_square_metres">Tonne square metres (t&middot;m&sup2;)</option>
+              </optgroup>
+              <optgroup label="Imperial / US">
+                <option value="ounces_square_inches">Ounce square inches (oz&middot;in&sup2;)</option>
+                <option value="pounds_square_inches">Pound square inches (lb&middot;in&sup2;)</option>
+                <option value="slugs_square_inches">Slug square inches (slug&middot;in&sup2;)</option>
+                <option value="pounds_square_feet">Pound square feet (lb&middot;ft&sup2;)</option>
+                <option value="slugs_square_feet">Slug square feet (slug&middot;ft&sup2;)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Moment of Inertia Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Moment of Inertia Conversions</h2>
+      <ul>
+        <li>1 kg&middot;m&sup2; = 10<sup>4</sup> kg&middot;cm&sup2; = 10<sup>6</sup> kg&middot;mm&sup2; &asymp; 23.730 lb&middot;ft&sup2; &asymp; 0.7376 slug&middot;ft&sup2;</li>
+        <li>1 slug&middot;ft&sup2; &asymp; 1.3558 kg&middot;m&sup2; = 32.174 lb&middot;ft&sup2; &asymp; 4633 lb&middot;in&sup2;</li>
+        <li>1 lb&middot;ft&sup2; &asymp; 0.04214 kg&middot;m&sup2; = 144 lb&middot;in&sup2; &asymp; 0.03108 slug&middot;ft&sup2;</li>
+        <li>1 lb&middot;in&sup2; &asymp; 2.926 &times; 10<sup>-4</sup> kg&middot;m&sup2; = 1/144 lb&middot;ft&sup2; &asymp; 16 oz&middot;in&sup2;</li>
+        <li>1 kg&middot;cm&sup2; = 10<sup>-4</sup> kg&middot;m&sup2; = 100 kg&middot;mm&sup2; &asymp; 2.373 &times; 10<sup>-3</sup> lb&middot;ft&sup2;</li>
+        <li>1 g&middot;cm&sup2; = 10<sup>-7</sup> kg&middot;m&sup2; = 0.01 kg&middot;mm&sup2; &asymp; 3.418 &times; 10<sup>-6</sup> lb&middot;ft&sup2;</li>
+        <li>1 t&middot;m&sup2; = 1000 kg&middot;m&sup2; &asymp; 737.6 slug&middot;ft&sup2; &asymp; 23 730 lb&middot;ft&sup2;</li>
+        <li>1 slug&middot;in&sup2; &asymp; 9.415 &times; 10<sup>-3</sup> kg&middot;m&sup2; &asymp; 32.17 lb&middot;in&sup2; &asymp; 0.2235 lb&middot;ft&sup2;</li>
+        <li>1 kg&middot;dm&sup2; = 0.01 kg&middot;m&sup2; = 100 kg&middot;cm&sup2; &asymp; 0.2373 lb&middot;ft&sup2;</li>
+        <li>Parallel-axis theorem: I = I<sub>cm</sub> + m&middot;d&sup2; (d in m, m in kg &rarr; I in kg&middot;m&sup2;)</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/engineering/moment-of-inertia-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Gram square millimetres',      s:'grams_square_millimetres'},
+      {n:'Gram square centimetres',      s:'grams_square_centimetres'},
+      {n:'Kilogram square millimetres',  s:'kilograms_square_millimetres'},
+      {n:'Ounce square inches',          s:'ounces_square_inches'},
+      {n:'Kilogram square centimetres',  s:'kilograms_square_centimetres'},
+      {n:'Pound square inches',          s:'pounds_square_inches'},
+      {n:'Gram square metres',           s:'grams_square_metres'},
+      {n:'Slug square inches',           s:'slugs_square_inches'},
+      {n:'Kilogram square decimetres',   s:'kilograms_square_decimetres'},
+      {n:'Pound square feet',            s:'pounds_square_feet'},
+      {n:'Kilogram square metres',       s:'kilograms_square_metres'},
+      {n:'Slug square feet',             s:'slugs_square_feet'},
+      {n:'Tonne square metres',          s:'tonnes_square_metres'}
+    ];
+    var cat = 'engineering/moment-of-inertia';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

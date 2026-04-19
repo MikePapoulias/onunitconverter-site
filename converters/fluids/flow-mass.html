@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flow Rate (Mass) Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all mass flow rate units instantly. Kilograms per second, tonnes per hour, pounds per hour, grams per second and more. Free, accurate, real-time conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/fluids/">Fluids Converters</a></li>
+          <li><span>Flow Rate (Mass) Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Flow Rate (Mass) Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all mass flow rate units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: kilogram per second (kg/s)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="kilograms_per_second">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertFlowMass()">
+            <select id="fromUnit" onchange="convertFlowMass()">
+              <optgroup label="Micrograms">
+                <option value="micrograms_per_second">Micrograms per second (&micro;g/s)</option>
+                <option value="micrograms_per_minute">Micrograms per minute (&micro;g/min)</option>
+                <option value="micrograms_per_hour">Micrograms per hour (&micro;g/h)</option>
+              </optgroup>
+              <optgroup label="Milligrams">
+                <option value="milligrams_per_second">Milligrams per second (mg/s)</option>
+                <option value="milligrams_per_minute">Milligrams per minute (mg/min)</option>
+                <option value="milligrams_per_hour">Milligrams per hour (mg/h)</option>
+                <option value="milligrams_per_day">Milligrams per day (mg/d)</option>
+              </optgroup>
+              <optgroup label="Grains">
+                <option value="grains_per_second">Grains per second (gr/s)</option>
+                <option value="grains_per_minute">Grains per minute (gr/min)</option>
+                <option value="grains_per_hour">Grains per hour (gr/h)</option>
+              </optgroup>
+              <optgroup label="Grams">
+                <option value="grams_per_second">Grams per second (g/s)</option>
+                <option value="grams_per_minute">Grams per minute (g/min)</option>
+                <option value="grams_per_hour">Grams per hour (g/h)</option>
+                <option value="grams_per_day">Grams per day (g/d)</option>
+              </optgroup>
+              <optgroup label="Ounces">
+                <option value="ounces_per_second">Ounces per second (oz/s)</option>
+                <option value="ounces_per_minute">Ounces per minute (oz/min)</option>
+                <option value="ounces_per_hour">Ounces per hour (oz/h)</option>
+                <option value="ounces_per_day">Ounces per day (oz/d)</option>
+              </optgroup>
+              <optgroup label="Pounds">
+                <option value="pounds_per_second">Pounds per second (lb/s)</option>
+                <option value="pounds_per_minute">Pounds per minute (lb/min)</option>
+                <option value="pounds_per_hour">Pounds per hour (lb/h)</option>
+                <option value="pounds_per_day">Pounds per day (lb/d)</option>
+              </optgroup>
+              <optgroup label="Kilograms">
+                <option value="kilograms_per_second" selected>Kilograms per second (kg/s)</option>
+                <option value="kilograms_per_minute">Kilograms per minute (kg/min)</option>
+                <option value="kilograms_per_hour">Kilograms per hour (kg/h)</option>
+                <option value="kilograms_per_day">Kilograms per day (kg/d)</option>
+              </optgroup>
+              <optgroup label="Slugs">
+                <option value="slugs_per_second">Slugs per second (slug/s)</option>
+                <option value="slugs_per_hour">Slugs per hour (slug/h)</option>
+              </optgroup>
+              <optgroup label="Hundredweights">
+                <option value="short_hundredweights_per_hour">Short hundredweights per hour (cwt/h)</option>
+                <option value="short_hundredweights_per_day">Short hundredweights per day (cwt/d)</option>
+                <option value="long_hundredweights_per_hour">Long hundredweights per hour (cwt/h)</option>
+                <option value="long_hundredweights_per_day">Long hundredweights per day (cwt/d)</option>
+              </optgroup>
+              <optgroup label="Short tons (US)">
+                <option value="short_tons_per_second">Short tons per second (ton/s)</option>
+                <option value="short_tons_per_minute">Short tons per minute (ton/min)</option>
+                <option value="short_tons_per_hour">Short tons per hour (ton/h)</option>
+                <option value="short_tons_per_day">Short tons per day (ton/d)</option>
+              </optgroup>
+              <optgroup label="Metric tons">
+                <option value="tonnes_per_second">Metric tons per second (t/s)</option>
+                <option value="tonnes_per_minute">Metric tons per minute (t/min)</option>
+                <option value="tonnes_per_hour">Metric tons per hour (t/h)</option>
+                <option value="tonnes_per_day">Metric tons per day (t/d)</option>
+              </optgroup>
+              <optgroup label="Long tons (UK)">
+                <option value="long_tons_per_second">Long tons per second (long ton/s)</option>
+                <option value="long_tons_per_minute">Long tons per minute (long ton/min)</option>
+                <option value="long_tons_per_hour">Long tons per hour (long ton/h)</option>
+                <option value="long_tons_per_day">Long tons per day (long ton/d)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertFlowMass()">
+              <optgroup label="Micrograms">
+                <option value="micrograms_per_second">Micrograms per second (&micro;g/s)</option>
+                <option value="micrograms_per_minute">Micrograms per minute (&micro;g/min)</option>
+                <option value="micrograms_per_hour">Micrograms per hour (&micro;g/h)</option>
+              </optgroup>
+              <optgroup label="Milligrams">
+                <option value="milligrams_per_second">Milligrams per second (mg/s)</option>
+                <option value="milligrams_per_minute">Milligrams per minute (mg/min)</option>
+                <option value="milligrams_per_hour">Milligrams per hour (mg/h)</option>
+                <option value="milligrams_per_day">Milligrams per day (mg/d)</option>
+              </optgroup>
+              <optgroup label="Grains">
+                <option value="grains_per_second">Grains per second (gr/s)</option>
+                <option value="grains_per_minute">Grains per minute (gr/min)</option>
+                <option value="grains_per_hour">Grains per hour (gr/h)</option>
+              </optgroup>
+              <optgroup label="Grams">
+                <option value="grams_per_second">Grams per second (g/s)</option>
+                <option value="grams_per_minute">Grams per minute (g/min)</option>
+                <option value="grams_per_hour">Grams per hour (g/h)</option>
+                <option value="grams_per_day">Grams per day (g/d)</option>
+              </optgroup>
+              <optgroup label="Ounces">
+                <option value="ounces_per_second">Ounces per second (oz/s)</option>
+                <option value="ounces_per_minute">Ounces per minute (oz/min)</option>
+                <option value="ounces_per_hour">Ounces per hour (oz/h)</option>
+                <option value="ounces_per_day">Ounces per day (oz/d)</option>
+              </optgroup>
+              <optgroup label="Pounds">
+                <option value="pounds_per_second">Pounds per second (lb/s)</option>
+                <option value="pounds_per_minute">Pounds per minute (lb/min)</option>
+                <option value="pounds_per_hour">Pounds per hour (lb/h)</option>
+                <option value="pounds_per_day">Pounds per day (lb/d)</option>
+              </optgroup>
+              <optgroup label="Kilograms">
+                <option value="kilograms_per_second">Kilograms per second (kg/s)</option>
+                <option value="kilograms_per_minute">Kilograms per minute (kg/min)</option>
+                <option value="kilograms_per_hour" selected>Kilograms per hour (kg/h)</option>
+                <option value="kilograms_per_day">Kilograms per day (kg/d)</option>
+              </optgroup>
+              <optgroup label="Slugs">
+                <option value="slugs_per_second">Slugs per second (slug/s)</option>
+                <option value="slugs_per_hour">Slugs per hour (slug/h)</option>
+              </optgroup>
+              <optgroup label="Hundredweights">
+                <option value="short_hundredweights_per_hour">Short hundredweights per hour (cwt/h)</option>
+                <option value="short_hundredweights_per_day">Short hundredweights per day (cwt/d)</option>
+                <option value="long_hundredweights_per_hour">Long hundredweights per hour (cwt/h)</option>
+                <option value="long_hundredweights_per_day">Long hundredweights per day (cwt/d)</option>
+              </optgroup>
+              <optgroup label="Short tons (US)">
+                <option value="short_tons_per_second">Short tons per second (ton/s)</option>
+                <option value="short_tons_per_minute">Short tons per minute (ton/min)</option>
+                <option value="short_tons_per_hour">Short tons per hour (ton/h)</option>
+                <option value="short_tons_per_day">Short tons per day (ton/d)</option>
+              </optgroup>
+              <optgroup label="Metric tons">
+                <option value="tonnes_per_second">Metric tons per second (t/s)</option>
+                <option value="tonnes_per_minute">Metric tons per minute (t/min)</option>
+                <option value="tonnes_per_hour">Metric tons per hour (t/h)</option>
+                <option value="tonnes_per_day">Metric tons per day (t/d)</option>
+              </optgroup>
+              <optgroup label="Long tons (UK)">
+                <option value="long_tons_per_second">Long tons per second (long ton/s)</option>
+                <option value="long_tons_per_minute">Long tons per minute (long ton/min)</option>
+                <option value="long_tons_per_hour">Long tons per hour (long ton/h)</option>
+                <option value="long_tons_per_day">Long tons per day (long ton/d)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Mass Flow Rate Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Mass Flow Rate Conversions</h2>
+      <ul>
+        <li>1 kg/s = 3 600 kg/h = 60 kg/min &asymp; 2.205 lb/s &asymp; 7 936.6 lb/h</li>
+        <li>1 t/h &asymp; 0.27778 kg/s = 1 000 kg/h &asymp; 2 204.6 lb/h &asymp; 1.102 short ton/h</li>
+        <li>1 lb/h &asymp; 1.2600 &times; 10<sup>-4</sup> kg/s = 0.45359 kg/h &asymp; 0.4536 kg/h</li>
+        <li>1 short ton/h &asymp; 0.25200 kg/s = 907.18 kg/h = 2 000 lb/h &asymp; 0.9072 t/h</li>
+        <li>1 long ton/h &asymp; 0.28224 kg/s = 1 016.05 kg/h &asymp; 2 240 lb/h &asymp; 1.016 t/h</li>
+        <li>1 lb/s &asymp; 1 800 lb/min = 3 600 lb/h &asymp; 1.63 short ton/h &asymp; 1.63 t/h</li>
+        <li>1 g/s = 3.6 kg/h = 0.001 kg/s &asymp; 7.937 lb/h &asymp; 0.003527 lb/s</li>
+        <li>1 slug/s &asymp; 14.594 kg/s &asymp; 32.174 lb/s &asymp; 52 548 kg/h</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/fluids/flow-mass-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Micrograms per second',              s:'micrograms_per_second'},
+      {n:'Micrograms per minute',              s:'micrograms_per_minute'},
+      {n:'Micrograms per hour',                s:'micrograms_per_hour'},
+      {n:'Milligrams per second',              s:'milligrams_per_second'},
+      {n:'Milligrams per minute',              s:'milligrams_per_minute'},
+      {n:'Milligrams per hour',                s:'milligrams_per_hour'},
+      {n:'Milligrams per day',                 s:'milligrams_per_day'},
+      {n:'Grains per second',                  s:'grains_per_second'},
+      {n:'Grains per minute',                  s:'grains_per_minute'},
+      {n:'Grains per hour',                    s:'grains_per_hour'},
+      {n:'Grams per second',                   s:'grams_per_second'},
+      {n:'Grams per minute',                   s:'grams_per_minute'},
+      {n:'Grams per hour',                     s:'grams_per_hour'},
+      {n:'Grams per day',                      s:'grams_per_day'},
+      {n:'Ounces per second',                  s:'ounces_per_second'},
+      {n:'Ounces per minute',                  s:'ounces_per_minute'},
+      {n:'Ounces per hour',                    s:'ounces_per_hour'},
+      {n:'Ounces per day',                     s:'ounces_per_day'},
+      {n:'Pounds per second',                  s:'pounds_per_second'},
+      {n:'Pounds per minute',                  s:'pounds_per_minute'},
+      {n:'Pounds per hour',                    s:'pounds_per_hour'},
+      {n:'Pounds per day',                     s:'pounds_per_day'},
+      {n:'Kilograms per second',               s:'kilograms_per_second'},
+      {n:'Kilograms per minute',               s:'kilograms_per_minute'},
+      {n:'Kilograms per hour',                 s:'kilograms_per_hour'},
+      {n:'Kilograms per day',                  s:'kilograms_per_day'},
+      {n:'Slugs per second',                   s:'slugs_per_second'},
+      {n:'Slugs per hour',                     s:'slugs_per_hour'},
+      {n:'Short hundredweights per hour',      s:'short_hundredweights_per_hour'},
+      {n:'Short hundredweights per day',       s:'short_hundredweights_per_day'},
+      {n:'Long hundredweights per hour',       s:'long_hundredweights_per_hour'},
+      {n:'Long hundredweights per day',        s:'long_hundredweights_per_day'},
+      {n:'Short tons per second',              s:'short_tons_per_second'},
+      {n:'Short tons per minute',              s:'short_tons_per_minute'},
+      {n:'Short tons per hour',                s:'short_tons_per_hour'},
+      {n:'Short tons per day',                 s:'short_tons_per_day'},
+      {n:'Metric tons per second',             s:'tonnes_per_second'},
+      {n:'Metric tons per minute',             s:'tonnes_per_minute'},
+      {n:'Metric tons per hour',               s:'tonnes_per_hour'},
+      {n:'Metric tons per day',                s:'tonnes_per_day'},
+      {n:'Long tons per second',               s:'long_tons_per_second'},
+      {n:'Long tons per minute',               s:'long_tons_per_minute'},
+      {n:'Long tons per hour',                 s:'long_tons_per_hour'},
+      {n:'Long tons per day',                  s:'long_tons_per_day'}
+    ];
+    var cat = 'fluids/flow-mass';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s.replace(/_/g, '-') + '-to-' + to.s.replace(/_/g, '-') + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  })();
+  </script>
+
+</body>
+</html>

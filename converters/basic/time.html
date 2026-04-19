@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Time Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all time units instantly. Seconds, minutes, hours, days, weeks, months, years, milliseconds, nanoseconds, attoseconds, gigayears and many more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><span>Time Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Time Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all common time units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: second (s)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="seconds">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertTime()">
+            <select id="fromUnit" onchange="convertTime()">
+              <option value="planckTime">Planck Time (t_P)</option>
+              <option value="yoctoseconds">Yoctoseconds (ys)</option>
+              <option value="zeptoseconds">Zeptoseconds (zs)</option>
+              <option value="attoseconds">Attoseconds (as)</option>
+              <option value="femtoseconds">Femtoseconds (fs)</option>
+              <option value="picoseconds">Picoseconds (ps)</option>
+              <option value="nanoseconds">Nanoseconds (ns)</option>
+              <option value="shakes">Shakes (sh)</option>
+              <option value="microseconds">Microseconds (&#x00b5;s)</option>
+              <option value="milliseconds">Milliseconds (ms)</option>
+              <option value="seconds">Seconds (s)</option>
+              <option value="minutes">Minutes (min)</option>
+              <option value="microcenturies">Microcenturies (&#x00b5;cy)</option>
+              <option value="hours" selected>Hours (h)</option>
+              <option value="siderealDays">Sidereal Days (sid.d)</option>
+              <option value="days">Days (d)</option>
+              <option value="weeks">Weeks (wk)</option>
+              <option value="fortnights">Fortnights (fn)</option>
+              <option value="draconicMonths">Draconic Months (drac.mo)</option>
+              <option value="siderealMonths">Sidereal Months (sid.mo)</option>
+              <option value="anomalisticMonths">Anomalistic Months (anom.mo)</option>
+              <option value="synodicMonths">Synodic Months (syn.mo)</option>
+              <option value="months">Months (mo)</option>
+              <option value="tropicalYears">Tropical Years (a_trop)</option>
+              <option value="years">Gregorian Years (yr)</option>
+              <option value="julianYears">Julian Years (a_J)</option>
+              <option value="siderealYears">Sidereal Years (a_sid)</option>
+              <option value="olympiads">Olympiads (Ol)</option>
+              <option value="decades">Decades (dec)</option>
+              <option value="centuries">Centuries (cent)</option>
+              <option value="millennia">Millennia (ka)</option>
+              <option value="megayears">Megayears (Ma)</option>
+              <option value="gigayears">Gigayears (Ga)</option>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertTime()">
+              <option value="planckTime">Planck Time (t_P)</option>
+              <option value="yoctoseconds">Yoctoseconds (ys)</option>
+              <option value="zeptoseconds">Zeptoseconds (zs)</option>
+              <option value="attoseconds">Attoseconds (as)</option>
+              <option value="femtoseconds">Femtoseconds (fs)</option>
+              <option value="picoseconds">Picoseconds (ps)</option>
+              <option value="nanoseconds">Nanoseconds (ns)</option>
+              <option value="shakes">Shakes (sh)</option>
+              <option value="microseconds">Microseconds (&#x00b5;s)</option>
+              <option value="milliseconds">Milliseconds (ms)</option>
+              <option value="seconds" selected>Seconds (s)</option>
+              <option value="minutes">Minutes (min)</option>
+              <option value="microcenturies">Microcenturies (&#x00b5;cy)</option>
+              <option value="hours">Hours (h)</option>
+              <option value="siderealDays">Sidereal Days (sid.d)</option>
+              <option value="days">Days (d)</option>
+              <option value="weeks">Weeks (wk)</option>
+              <option value="fortnights">Fortnights (fn)</option>
+              <option value="draconicMonths">Draconic Months (drac.mo)</option>
+              <option value="siderealMonths">Sidereal Months (sid.mo)</option>
+              <option value="anomalisticMonths">Anomalistic Months (anom.mo)</option>
+              <option value="synodicMonths">Synodic Months (syn.mo)</option>
+              <option value="months">Months (mo)</option>
+              <option value="tropicalYears">Tropical Years (a_trop)</option>
+              <option value="years">Gregorian Years (yr)</option>
+              <option value="julianYears">Julian Years (a_J)</option>
+              <option value="siderealYears">Sidereal Years (a_sid)</option>
+              <option value="olympiads">Olympiads (Ol)</option>
+              <option value="decades">Decades (dec)</option>
+              <option value="centuries">Centuries (cent)</option>
+              <option value="millennia">Millennia (ka)</option>
+              <option value="megayears">Megayears (Ma)</option>
+              <option value="gigayears">Gigayears (Ga)</option>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Time Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Time Conversions</h2>
+      <ul>
+        <li>1 min = 60 s &nbsp;|&nbsp; 1 h = 3,600 s = 60 min &nbsp;|&nbsp; 1 day = 86,400 s = 24 h = 1,440 min</li>
+        <li>1 week = 7 days = 604,800 s &nbsp;|&nbsp; 1 fortnight = 14 days = 1,209,600 s</li>
+        <li>1 Gregorian year = 365.2425 days = 8,765.82 h = 31,556,952 s</li>
+        <li>1 Julian year (IAU) = 365.25 days = 31,557,600 s (used for light-years and parsecs)</li>
+        <li>1 tropical year = 365.24219 days = 31,556,925.216 s (governs the seasons)</li>
+        <li>1 synodic month = 29.530588853 days &#x2248; 2,551,442.877 s (new moon to new moon)</li>
+        <li>1 sidereal day = 23 h 56 min 4.0905 s = 86,164.0905 s (Earth rotation relative to stars)</li>
+        <li>1 ms = 10&#x207b;&#x00b3; s &nbsp;|&nbsp; 1 &#x00b5;s = 10&#x207b;&#x2076; s &nbsp;|&nbsp; 1 ns = 10&#x207b;&#x2079; s &nbsp;|&nbsp; 1 ps = 10&#x207b;&#x00b9;&#x00b2; s &nbsp;|&nbsp; 1 fs = 10&#x207b;&#x00b9;&#x2075; s</li>
+        <li>1 decade = 10 yr &nbsp;|&nbsp; 1 century = 100 yr &nbsp;|&nbsp; 1 millennium = 1,000 yr = 1 ka</li>
+        <li>Age of the universe &#x2248; 13.787 Ga &#x2248; 4.352 &#x00d7; 10&#x00b9;&#x2077; s</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/time-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Planck Time',s:'planck-time'},
+      {n:'Yoctoseconds',s:'yoctoseconds'},
+      {n:'Zeptoseconds',s:'zeptoseconds'},
+      {n:'Attoseconds',s:'attoseconds'},
+      {n:'Femtoseconds',s:'femtoseconds'},
+      {n:'Picoseconds',s:'picoseconds'},
+      {n:'Nanoseconds',s:'nanoseconds'},
+      {n:'Shakes',s:'shakes'},
+      {n:'Microseconds',s:'microseconds'},
+      {n:'Milliseconds',s:'milliseconds'},
+      {n:'Seconds',s:'seconds'},
+      {n:'Minutes',s:'minutes'},
+      {n:'Microcenturies',s:'microcenturies'},
+      {n:'Hours',s:'hours'},
+      {n:'Sidereal Days',s:'sidereal-days'},
+      {n:'Days',s:'days'},
+      {n:'Weeks',s:'weeks'},
+      {n:'Fortnights',s:'fortnights'},
+      {n:'Draconic Months',s:'draconic-months'},
+      {n:'Sidereal Months',s:'sidereal-months'},
+      {n:'Anomalistic Months',s:'anomalistic-months'},
+      {n:'Synodic Months',s:'synodic-months'},
+      {n:'Months',s:'months'},
+      {n:'Tropical Years',s:'tropical-years'},
+      {n:'Gregorian Years',s:'gregorian-years'},
+      {n:'Julian Years',s:'julian-years'},
+      {n:'Sidereal Years',s:'sidereal-years'},
+      {n:'Olympiads',s:'olympiads'},
+      {n:'Decades',s:'decades'},
+      {n:'Centuries',s:'centuries'},
+      {n:'Millennia',s:'millennia'},
+      {n:'Megayears',s:'megayears'},
+      {n:'Gigayears',s:'gigayears'}
+    ];
+    var cat = 'basic/time';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  }());
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+</body>
+
+</html>

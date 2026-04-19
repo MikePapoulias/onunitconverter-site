@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Length Converter | UnitConverter</title>
+  <meta name="description"
+    content="Convert between all length units instantly. Meters, inches, feet, centimeters, kilometers, miles and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/">Converters</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><span>Length Converter</span></li>
+        </ol>
+      </nav>
+      <h1>Length Converter</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert between all common length units instantly. Select your units from the dropdowns below
+        and enter a value to see the conversion in real-time.
+      </p>
+
+      <p style="text-align: center; color: #c0392b; font-weight: 600; font-size: 1.1rem; margin: 0; padding: 2px 0 4px;">SI unit: metre (m)</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;" data-si-unit="meters">
+        <div class="converter-grid">
+
+          <!-- From Row -->
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value" step="any" oninput="convertLength()">
+            <select id="fromUnit" onchange="convertLength()">
+              <option value="yoctometers">Yoctometers (ym)</option>
+              <option value="zeptometers">Zeptometers (zm)</option>
+              <option value="attometers">Attometers (am)</option>
+              <option value="femtometers">Femtometers (fm)</option>
+              <option value="picometers">Picometers (pm)</option>
+              <option value="angstroms">Angstroms (Å)</option>
+              <option value="nanometers">Nanometers (nm)</option>
+              <option value="micrometers">Micrometers (μm)</option>
+              <option value="thou">Thou (th)</option>
+              <option value="millimeters">Millimeters (mm)</option>
+              <option value="centimeters">Centimeters (cm)</option>
+              <option value="inches">Inches (in)</option>
+              <option value="decimeters">Decimeters (dm)</option>
+              <option value="feet">Feet (ft)</option>
+              <option value="fathoms">Fathoms (ftm)</option>
+              <option value="yards">Yards (yd)</option>
+              <option value="meters">Meters (m)</option>
+              <option value="dekameters">Dekameters (dam)</option>
+              <option value="hectometers">Hectometers (hm)</option>
+              <option value="kilometers">Kilometers (km)</option>
+              <option value="miles">Miles (mi)</option>
+              <option value="nauticalMiles">Nautical Miles (nmi)</option>
+              <option value="megameters">Megameters (Mm)</option>
+              <option value="gigameters">Gigameters (Gm)</option>
+              <option value="terameters">Terameters (Tm)</option>
+              <option value="earthRadius">Earth Radius (R⊕)</option>
+              <option value="astronomicalUnits">Astronomical Units (AU)</option>
+              <option value="lightSeconds">Light Seconds (ls)</option>
+              <option value="lightMinutes">Light Minutes (lm)</option>
+              <option value="lightHours">Light Hours (lh)</option>
+              <option value="lightDays">Light Days (ld)</option>
+              <option value="lightYears">Light Years (ly)</option>
+              <option value="parsecs">Parsecs (pc)</option>
+              <option value="kiloparsecs">Kiloparsecs (kpc)</option>
+              <option value="megaparsecs">Megaparsecs (Mpc)</option>
+              <option value="gigaparsecs">Gigaparsecs (Gpc)</option>
+            </select>
+          </div>
+
+          <!-- To Row -->
+          <div class="converter-row">
+            <label for="toValue">To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <select id="toUnit" onchange="convertLength()">
+              <option value="yoctometers">Yoctometers (ym)</option>
+              <option value="zeptometers">Zeptometers (zm)</option>
+              <option value="attometers">Attometers (am)</option>
+              <option value="femtometers">Femtometers (fm)</option>
+              <option value="picometers">Picometers (pm)</option>
+              <option value="angstroms">Angstroms (Å)</option>
+              <option value="nanometers">Nanometers (nm)</option>
+              <option value="micrometers">Micrometers (μm)</option>
+              <option value="thou">Thou (th)</option>
+              <option value="millimeters">Millimeters (mm)</option>
+              <option value="centimeters">Centimeters (cm)</option>
+              <option value="inches" selected>Inches (in)</option>
+              <option value="decimeters">Decimeters (dm)</option>
+              <option value="feet">Feet (ft)</option>
+              <option value="fathoms">Fathoms (ftm)</option>
+              <option value="yards">Yards (yd)</option>
+              <option value="meters">Meters (m)</option>
+              <option value="dekameters">Dekameters (dam)</option>
+              <option value="hectometers">Hectometers (hm)</option>
+              <option value="kilometers">Kilometers (km)</option>
+              <option value="miles">Miles (mi)</option>
+              <option value="nauticalMiles">Nautical Miles (nmi)</option>
+              <option value="megameters">Megameters (Mm)</option>
+              <option value="gigameters">Gigameters (Gm)</option>
+              <option value="terameters">Terameters (Tm)</option>
+              <option value="earthRadius">Earth Radius (R⊕)</option>
+              <option value="astronomicalUnits">Astronomical Units (AU)</option>
+              <option value="lightSeconds">Light Seconds (ls)</option>
+              <option value="lightMinutes">Light Minutes (lm)</option>
+              <option value="lightHours">Light Hours (lh)</option>
+              <option value="lightDays">Light Days (ld)</option>
+              <option value="lightYears">Light Years (ly)</option>
+              <option value="parsecs">Parsecs (pc)</option>
+              <option value="kiloparsecs">Kiloparsecs (kpc)</option>
+              <option value="megaparsecs">Megaparsecs (Mpc)</option>
+              <option value="gigaparsecs">Gigaparsecs (Gpc)</option>
+            </select>
+          </div>
+
+          <button id="swapBtn" type="button" class="swap-btn swap-btn-main" title="Swap units"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></button>
+
+        </div>
+
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Select units to see the conversion formula.</p>
+        <pre class="formula" id="formulaDisplay"></pre>
+      </div>
+
+      <h2>About Length Units</h2>
+      <div id="unitDescriptions">
+        <p>Select units above to see detailed information about them.</p>
+      </div>
+
+      <h2>Common Length Conversions</h2>
+      <ul>
+        <li>1 meter = 100 centimeters</li>
+        <li>1 meter = 39.37 inches</li>
+        <li>1 inch = 2.54 centimeters</li>
+        <li>1 foot = 30.48 centimeters</li>
+        <li>1 yard = 3 feet = 0.9144 meters</li>
+        <li>1 kilometer = 0.621371 miles</li>
+        <li>1 mile = 1.60934 kilometers</li>
+        <li>1 nautical mile = 1.852 kilometers</li>
+        <li>1 AU = 149.6 million kilometers</li>
+        <li>1 light year = 9.461 trillion kilometers</li>
+      </ul>
+
+      <h2>Direct Converters</h2>
+      <div class="direct-converters" id="dcLinks"></div>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/length-converter.js"></script>
+  <script src="/assets/js/custom-select.js"></script>
+  <script>
+  (function () {
+    var units = [
+      {n:'Yoctometers',s:'yoctometers'},
+      {n:'Zeptometers',s:'zeptometers'},
+      {n:'Attometers',s:'attometers'},
+      {n:'Femtometers',s:'femtometers'},
+      {n:'Picometers',s:'picometers'},
+      {n:'Angstroms',s:'angstroms'},
+      {n:'Nanometers',s:'nanometers'},
+      {n:'Micrometers',s:'micrometers'},
+      {n:'Thou',s:'thou'},
+      {n:'Millimeters',s:'millimeters'},
+      {n:'Centimeters',s:'centimeters'},
+      {n:'Inches',s:'inches'},
+      {n:'Decimeters',s:'decimeters'},
+      {n:'Feet',s:'feet'},
+      {n:'Fathoms',s:'fathoms'},
+      {n:'Yards',s:'yards'},
+      {n:'Meters',s:'meters'},
+      {n:'Dekameters',s:'dekameters'},
+      {n:'Hectometers',s:'hectometers'},
+      {n:'Kilometers',s:'kilometers'},
+      {n:'Miles',s:'miles'},
+      {n:'Nautical Miles',s:'nautical-miles'},
+      {n:'Megameters',s:'megameters'},
+      {n:'Gigameters',s:'gigameters'},
+      {n:'Terameters',s:'terameters'},
+      {n:'Earth Radius',s:'earth-radius'},
+      {n:'Astronomical Units',s:'astronomical-units'},
+      {n:'Light Seconds',s:'light-seconds'},
+      {n:'Light Minutes',s:'light-minutes'},
+      {n:'Light Hours',s:'light-hours'},
+      {n:'Light Days',s:'light-days'},
+      {n:'Light Years',s:'light-years'},
+      {n:'Parsecs',s:'parsecs'},
+      {n:'Kiloparsecs',s:'kiloparsecs'},
+      {n:'Megaparsecs',s:'megaparsecs'},
+      {n:'Gigaparsecs',s:'gigaparsecs'}
+    ];
+    var cat = 'basic/length';
+    var container = document.getElementById('dcLinks');
+    units.forEach(function (from) {
+      var group = document.createElement('div');
+      group.className = 'dc-group';
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'dc-btn';
+      btn.innerHTML = from.n + ' to&hellip; <span class="dc-arrow">&#9660;</span>';
+      var ul = document.createElement('ul');
+      ul.className = 'dc-links';
+      ul.hidden = true;
+      units.forEach(function (to) {
+        if (to.s === from.s) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '/' + cat + '/' + from.s + '-to-' + to.s + '/';
+        a.textContent = from.n + ' to ' + to.n;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      btn.addEventListener('click', function () {
+        var isOpen = !ul.hidden;
+        container.querySelectorAll('.dc-links').forEach(function (l) { l.hidden = true; });
+        container.querySelectorAll('.dc-btn').forEach(function (b) { b.classList.remove('open'); });
+        if (!isOpen) { ul.hidden = false; btn.classList.add('open'); btn.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+      group.appendChild(btn);
+      group.appendChild(ul);
+      container.appendChild(group);
+    });
+  }());
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var fromSel = document.getElementById('fromUnit');
+    var toSel   = document.getElementById('toUnit');
+    var btn     = document.getElementById('swapBtn');
+    if (!btn || !fromSel || !toSel) return;
+    function updateSwapState() {
+      btn.disabled = (fromSel.value === toSel.value);
+    }
+    fromSel.addEventListener('change', updateSwapState);
+    toSel.addEventListener('change', updateSwapState);
+    updateSwapState();
+    btn.addEventListener('click', function () {
+      var tmp = fromSel.value;
+      fromSel.value = toSel.value;
+      toSel.value = tmp;
+      if (window.refreshCustomSelect) {
+        window.refreshCustomSelect('fromUnit');
+        window.refreshCustomSelect('toUnit');
+      }
+      fromSel.dispatchEvent(new Event('change'));
+      updateSwapState();
+    });
+  });
+  </script>
+</body>
+
+</html>
