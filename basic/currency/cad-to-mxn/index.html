@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Convert Canadian Dollar to Mexican Peso (CAD to MXN) | UnitConverter</title>
+  <meta name="description" content="Convert Canadian Dollar (CAD) to Mexican Peso (MXN). Daily updated exchange rates. Free and instant currency conversion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://onunitconverter.com/basic/currency/cad-to-mxn/">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+    #currencyRefTable { border-collapse: collapse; width: 100%; margin-top: 8px; }
+    #currencyRefTable th, #currencyRefTable td { border: 1px solid #ddd; padding: 6px 10px; text-align: right; }
+    #currencyRefTable th { background: #f2f2f2; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><a href="/converters/basic/currency.html">Currency Converter</a></li>
+          <li><span>Canadian Dollar to Mexican Peso</span></li>
+        </ol>
+      </nav>
+
+      <h1>Convert Canadian Dollar to Mexican Peso</h1>
+
+      <p style="margin-bottom: 0;">
+        Convert <strong>Canadian Dollar (CAD)</strong>
+        to <strong>Mexican Peso (MXN)</strong> using daily updated exchange rates.
+      </p>
+
+      <p id="rateStatus" style="text-align: center; font-weight: 600; font-size: 1.0rem; margin: 4px 0; padding: 2px 0 4px; color: #27ae60;">Loading exchange rates...</p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box" style="margin-top: 4px;">
+        <div class="converter-grid">
+
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" value="1" step="any" oninput="convertCurrency()" autocomplete="off">
+            <span class="unit-badge">Canadian Dollar (CAD)</span>
+            <select id="fromUnit" hidden>
+              <option value="cad" selected>Canadian Dollar (CAD)</option>
+            </select>
+          </div>
+
+          <div class="converter-row">
+            <label>To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <span class="unit-badge">Mexican Peso (MXN)</span>
+            <select id="toUnit" hidden>
+              <option value="mxn" selected>Mexican Peso (MXN)</option>
+            </select>
+          </div>
+
+          <a href="/basic/currency/mxn-to-cad/" class="swap-btn swap-btn-main" title="Swap: convert Mexican Peso to Canadian Dollar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></a>
+
+        </div>
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Exchange Rate</h2>
+      <div id="formulaSection">
+        <p id="formulaDescription">Exchange rates are updated daily.</p>
+        <pre class="formula" id="formulaDisplay">Loading current rate...</pre>
+      </div>
+
+      <h2>About Canadian Dollar</h2>
+      <p>The Canadian Dollar (CAD), nicknamed the "Loonie" after the loon bird on the one-dollar coin, was introduced in 1858 and has been the official currency of Canada since Confederation in 1867. It is the sixth most traded currency in global foreign exchange markets. Canada's economy is among the world's ten largest and is closely integrated with the US economy under the USMCA (formerly NAFTA) agreement. The Bank of Canada manages monetary policy with a floating exchange rate.</p>
+
+      <h2>About Mexican Peso</h2>
+      <p>The Mexican Peso (MXN) is one of Latin America's most important currencies and among the most actively traded emerging market currencies globally. Mexico has a deep and liquid forex market. The Banco de Mexico (Banxico) manages monetary policy with a free-floating exchange rate. Mexico is the 13th largest economy in the world and the second largest in Latin America. Its economy is closely integrated with the US through the USMCA (formerly NAFTA) agreement - the US is Mexico's largest trading partner.</p>
+
+      <h2>Quick Reference Table</h2>
+      <table id="currencyRefTable">
+        <thead id="currencyRefTableHead">
+          <tr><th>Canadian Dollar (CAD)</th><th>Mexican Peso (MXN)</th></tr>
+        </thead>
+        <tbody id="currencyRefTableBody">
+          <tr><td colspan="2" style="text-align:center;">Loading rates...</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85rem; color: #888; margin-top: 6px;">
+        Exchange rates are updated daily and provided for informational purposes only.
+        Not suitable for financial transactions.
+        Source: <a href="https://github.com/fawazahmed0/exchange-api" target="_blank" rel="noopener">fawazahmed0/exchange-api</a> (MIT license).
+      </p>
+
+      <p><a href="/converters/basic/currency.html">&rarr; Full Currency Converter</a></p>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/currency-converter.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var inp = document.getElementById('fromValue');
+      var v = new URLSearchParams(location.search).get('v');
+      if (v !== null) inp.value = v;
+      var swapBtn = document.querySelector('.swap-btn-main');
+      if (swapBtn && inp) {
+        swapBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var val = inp.value;
+          var dest = swapBtn.getAttribute('href');
+          location.href = dest + (val !== '' ? '?v=' + encodeURIComponent(val) : '');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

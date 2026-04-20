@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Convert Feddan to Roods (fed to ro) | UnitConverter</title>
+  <meta name="description" content="Free online Feddan to Roods converter. 1 Feddan = 4.151 Roods. Instant and accurate.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://onunitconverter.com/basic/area/feddan-to-roods/">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .content ul { margin-left: 0; padding-left: 20px; }
+    .content li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="/" class="logo">UnitConverter</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="/converters/">Converters</a>
+          <ul class="dropdown-menu">
+            <li><a href="/converters/basic/">Basic Converters</a></li>
+            <li><a href="/converters/heat/">Heat Converters</a></li>
+            <li><a href="/converters/engineering/">Engineering Converters</a></li>
+            <li><a href="/converters/light/">Light Converters</a></li>
+            <li><a href="/converters/fluids/">Fluids Converters</a></li>
+            <li><a href="/converters/electricity/">Electricity Converters</a></li>
+            <li><a href="/converters/magnetism/">Magnetism Converters</a></li>
+            <li><a href="/converters/radiology/">Radiology Converters</a></li>
+            <li><a href="/converters/other/">Other Converters</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+    <section class="content">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/converters/basic/">Basic Converters</a></li>
+          <li><a href="/converters/basic/area.html">Area Converter</a></li>
+          <li><span>Feddan to Roods</span></li>
+        </ol>
+      </nav>
+
+      <h1>Convert Feddan to Roods</h1>
+
+      <p>
+        Convert <strong>Feddan (fed)</strong>
+        to <strong>Roods (ro)</strong> instantly and accurately.
+      </p>
+
+      <!-- CONVERTER BOX -->
+      <div class="converter-box">
+        <div class="converter-grid">
+
+          <div class="converter-row">
+            <label for="fromValue">From:</label>
+            <input type="number" id="fromValue" value="1" step="any" oninput="convertArea()">
+            <span class="unit-badge">Feddan (fed)</span>
+            <select id="fromUnit" hidden>
+              <option value="feddan" selected>Feddan (fed)</option>
+            </select>
+          </div>
+
+          <div class="converter-row">
+            <label>To:</label>
+            <input type="text" id="toValue" placeholder="Result" readonly inputmode="decimal">
+            <span class="unit-badge">Roods (ro)</span>
+            <select id="toUnit" hidden>
+              <option value="roods" selected>Roods (ro)</option>
+            </select>
+          </div>
+
+          <a href="/basic/area/roods-to-feddan/" class="swap-btn swap-btn-main" title="Swap: convert Roods to Feddan"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/></svg></a>
+
+        </div>
+        <p class="result" id="result"></p>
+      </div>
+
+      <h2>Conversion Formula</h2>
+      <pre class="formula">ro = fed × 4.151370409</pre>
+
+      <h2>About Feddan</h2>
+      <p>A feddan (فدان) is the primary unit of land area in Egypt, Sudan, and parts of the Arab world, equal to approximately 4,200 m² (1.038 acres or 0.42 hectares). Its name derives from the Arabic word for 'yoke of oxen,' reflecting its agricultural origins - similar to the British acre. Egypt reports its cultivated farmland in millions of feddan; the fertile Nile Delta that feeds Egypt is measured in feddan. The feddan is subdivided into 24 kirats (each ~175 m²). It remains the legal standard for agricultural land registration in Egypt and Sudan.</p>
+
+      <h2>About Roods</h2>
+      <p>A rood (ro) is a traditional English unit of land area equal to one quarter of an acre, or 40 square rods, approximately 1,011.71 m². Originating in medieval England, the rood was used alongside the acre and the perch for describing land ownership. The name shares its root with 'rod,' the linear unit used to measure it. While largely obsolete in modern use, roods still appear in old English legal documents, historical land surveys, and certain rural property records in England and Wales.</p>
+
+      <h2>Quick Reference Table</h2>
+      <table class="ref-table">
+          <thead><tr><th>Feddan (fed)</th><th>Roods (ro)</th></tr></thead>
+          <tbody>
+          <tr><td>1 fed</td><td>4.15137 ro</td></tr>
+          <tr><td>2 fed</td><td>8.30274 ro</td></tr>
+          <tr><td>5 fed</td><td>20.7569 ro</td></tr>
+          <tr><td>10 fed</td><td>41.5137 ro</td></tr>
+          <tr><td>25 fed</td><td>103.784 ro</td></tr>
+          <tr><td>50 fed</td><td>207.569 ro</td></tr>
+          <tr><td>100 fed</td><td>415.137 ro</td></tr>
+          </tbody>
+        </table>
+
+      <p><a href="/converters/basic/area.html">&rarr; Full Area Converter</a></p>
+
+    </section>
+
+    <aside class="ad-slot">
+      <!-- AdSense placeholder -->
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getUTCFullYear())</script> UnitConverter</p>
+    <ul class="footer-links">
+      <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/legal/terms.html">Terms</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sitemap.html">Sitemap</a></li>
+    </ul>
+  </footer>
+
+  <script src="/assets/js/converter-utils.js"></script>
+  <script src="/assets/js/basic/area-converter.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var inp = document.getElementById('fromValue');
+      var v = new URLSearchParams(location.search).get('v');
+      if (v !== null && v !== '' && isFinite(v)) inp.value = v;
+      var swapBtn = document.querySelector('.swap-btn-main');
+      if (swapBtn) swapBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var val = inp.value;
+        var dest = swapBtn.getAttribute('href');
+        location.href = dest + (val !== '' ? '?v=' + encodeURIComponent(val) : '');
+      });
+      try { convertArea(); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>
